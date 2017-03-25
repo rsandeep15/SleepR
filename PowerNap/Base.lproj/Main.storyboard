@@ -28,9 +28,6 @@
                                 <state key="normal" title="Login with Facebook">
                                     <color key="titleColor" red="0.98467564408051933" green="0.98384915146711227" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <segue destination="my1-mU-9Pz" kind="show" id="m1D-uR-bls"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eA-ab-26e">
                                 <rect key="frame" x="160" y="605" width="55" height="30"/>
@@ -58,24 +55,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079.2" y="138.98050974512745"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="J6V-tK-dIc">
-            <objects>
-                <viewController id="my1-mU-9Pz" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QnJ-fX-C1a"/>
-                        <viewControllerLayoutGuide type="bottom" id="wUb-8Y-gHq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7QL-OM-6BD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K3o-U6-1UZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2004" y="-546"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="vBg-JO-rAV">
@@ -257,10 +236,10 @@
             </objects>
             <point key="canvasLocation" x="2004" y="920"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="wrU-PX-2sA">
             <objects>
-                <viewController id="kjp-ib-QVR" sceneMemberID="viewController">
+                <viewController id="kjp-ib-QVR" customClass="MainViewController" customModule="PowerNap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="obx-Ub-E6q"/>
                         <viewControllerLayoutGuide type="bottom" id="msE-GZ-m1j"/>
@@ -270,11 +249,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HQf-Nr-SfH"/>
+                    <navigationItem key="navigationItem" id="HQf-Nr-SfH">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Plg-bl-Fvk">
+                            <connections>
+                                <action selector="logout:" destination="kjp-ib-QVR" id="4vo-im-JW6"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="logoutSegue" id="Edu-ps-OGa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAt-qo-DWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3836" y="457"/>
+            <point key="canvasLocation" x="3754" y="-627"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IU1-Qt-4V4">
@@ -314,6 +300,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Edu-ps-OGa"/>
         <segue reference="wys-Bc-3jV"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,7 @@
 		2C179E181E862CE60007EE78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C179E171E862CE60007EE78 /* GoogleService-Info.plist */; };
 		2C179E1A1E862DC40007EE78 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179E191E862DC40007EE78 /* SignUpViewController.swift */; };
 		2C179E1C1E863FE50007EE78 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C179E1B1E863FE50007EE78 /* AdSupport.framework */; };
+		2C179E1E1E86455D0007EE78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179E1D1E86455D0007EE78 /* MainViewController.swift */; };
 		EBE54FFB945EB94D8E0F47D5 /* Pods_PowerNap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7536C00250A89C19DF55C80 /* Pods_PowerNap.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		2C179E171E862CE60007EE78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C179E191E862DC40007EE78 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2C179E1B1E863FE50007EE78 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		2C179E1D1E86455D0007EE78 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4A47B695596CE959EB9EB6C4 /* Pods-PowerNap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerNap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerNap/Pods-PowerNap.debug.xcconfig"; sourceTree = "<group>"; };
 		B81FF09DE852FF4EA5449798 /* Pods-PowerNap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerNap.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerNap/Pods-PowerNap.release.xcconfig"; sourceTree = "<group>"; };
 		F7536C00250A89C19DF55C80 /* Pods_PowerNap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerNap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 				2C179E111E8629130007EE78 /* Info.plist */,
 				2C179E171E862CE60007EE78 /* GoogleService-Info.plist */,
 				2C179E191E862DC40007EE78 /* SignUpViewController.swift */,
+				2C179E1D1E86455D0007EE78 /* MainViewController.swift */,
 			);
 			path = PowerNap;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				2C179E1A1E862DC40007EE78 /* SignUpViewController.swift in Sources */,
 				2C179E081E8629130007EE78 /* LoginViewController.swift in Sources */,
 				2C179E061E8629130007EE78 /* AppDelegate.swift in Sources */,
+				2C179E1E1E86455D0007EE78 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
