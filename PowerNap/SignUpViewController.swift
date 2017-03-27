@@ -24,6 +24,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBOutlet weak var confirmPass: UITextField!
     
+    @IBOutlet weak var errorMessage: UILabel!
     let auth = FIRAuth.auth()
     let dbRef = FIRDatabase.database().reference()
     var ages: [String] = []
@@ -32,15 +33,20 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for index in 1...100 {
-            ages.append("\(index)")
-        }
+        
+        initializeAges()
         agePicker.delegate = self
         agePicker.dataSource = self
         agePicker.reloadAllComponents()
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    func initializeAges() {
+        for index in 1...100 {
+            ages.append("\(index)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,11 +55,24 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func validateForm() -> Bool {
+        // Check if names were entered
         if (firstName.text! == "" || lastName.text! == "") {
+            errorMessage.text = "Please enter a valid name"
             return false
         }
-        // Check if password fields match
-        if (password.text == "" && confirmPass.text == "" && password.text != confirmPass.text) {
+        // Check if email was entered
+        if (email.text == "") {
+            errorMessage.text = "Please enter a valid email"
+            return false;
+        }
+        // Check if password fields were entered
+        if (password.text == "" ){
+            errorMessage.text = "Please enter a valid password"
+            return false
+        }
+        // Check if passwords match
+        if (password.text != confirmPass.text) {
+            errorMessage.text = "Passwords do not match"
             return false
         }
        
@@ -82,7 +101,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                     self.performSegue(withIdentifier: "signUpSegue", sender: self)
                 }
                 if let error = error {
-                    print(error.localizedDescription)
+                    self.errorMessage.text = error.localizedDescription
                 }
             })
         }

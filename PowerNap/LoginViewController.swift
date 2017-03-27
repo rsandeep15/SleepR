@@ -12,6 +12,7 @@ import FirebaseAuth
 class LoginViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
 
+    @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var password: UITextField!
     
     let auth: FIRAuth = FIRAuth.auth()!
@@ -28,24 +29,33 @@ class LoginViewController: UIViewController {
     
     func validateForm() -> Bool {
         if (email.text == "" || password.text == "" ) {
+            errorMessage.text = "Please enter a valid email and password"
             return false
         }
         return true
     }
     
-    
-    @IBAction func login(_ sender: Any){
+    @IBAction func login(_ sender: Any) {
         if (validateForm()) {
             auth.signIn(withEmail: email.text!, password: password.text!, completion: { (user: FIRUser?, error: Error?) in
-                if let user = user {
-                    print("Logged In as \(user.displayName)")
-                    self.performSegue(withIdentifier: "loginSegue", sender: self)
+                if (user != nil){
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 }
-                if let error = error {
-                    print(error.localizedDescription)
+                if (error != nil) {
+                    self.errorMessage.text = "Invalid Password or User Does Not Exist"
                 }
             })
         }
+    }
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (validateForm()) {
+            if ((auth.currentUser) != nil) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

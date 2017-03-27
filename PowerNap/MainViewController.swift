@@ -23,10 +23,12 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func logout(_ sender: Any) {
         do {
-           try auth.signOut()
-            self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+            print("logging out")
+            try auth.signOut()
+            self.performSegue(withIdentifier: "logout", sender: nil)
         }
         catch FIRAuthErrorCode.errorCodeKeychainError {
             print("Key chain error")
@@ -34,9 +36,17 @@ class MainViewController: UIViewController {
         catch let error {
             print(error.localizedDescription)
         }
-        
     }
     
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (auth.currentUser == nil) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -47,5 +57,6 @@ class MainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }
