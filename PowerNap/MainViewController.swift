@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FBSDKLoginKit
 
 class MainViewController: UIViewController {
     
@@ -26,7 +27,12 @@ class MainViewController: UIViewController {
     
     @IBAction func logout(_ sender: Any) {
         do {
-            print("logging out")
+            // logout a facebook user
+            if (FBSDKAccessToken.current() != nil) {
+                 FBSDKAccessToken.setCurrent(nil)
+            }
+            
+            // logout the firebase user
             try auth.signOut()
             self.performSegue(withIdentifier: "logout", sender: nil)
         }

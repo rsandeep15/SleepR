@@ -85,18 +85,16 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             auth?.createUser(withEmail: email.text!, password: password.text!, completion: { (user: FIRUser?, error: Error?) in
                 if let user = user {
                     let changeRequest = user.profileChangeRequest()
-                    
-                    
+                    // Set the display name of the user
                     let firstNameText: String = self.firstName.text ?? "John"
+                    changeRequest.displayName = firstNameText
+                    
                     let lastNameText: String = self.lastName.text ?? "Smith"
                     let emailText: String = self.email.text ?? "testuser@email.com"
                     // Get the selected age from the UIPickerView
                     let age = self.ages[self.agePicker.selectedRow(inComponent: 0)]
                     
-                    // Set the display name of the user
-                    changeRequest.displayName = firstNameText
-                    // Add the user to the database of user with age, email, firstname, lastname 
-                    self.dbRef.child("users").child(user.uid).setValue(["firstName": firstNameText, "lastName": lastNameText, "email": emailText, "age": age])
+                    User.addUser(useruid: user.uid, firstName: firstNameText, lastName: lastNameText, email: emailText, age: age)
                     
                     self.performSegue(withIdentifier: "signUpSegue", sender: self)
                 }

@@ -16,6 +16,11 @@
 		2C179E1A1E862DC40007EE78 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179E191E862DC40007EE78 /* SignUpViewController.swift */; };
 		2C179E1C1E863FE50007EE78 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C179E1B1E863FE50007EE78 /* AdSupport.framework */; };
 		2C179E1E1E86455D0007EE78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179E1D1E86455D0007EE78 /* MainViewController.swift */; };
+		2C30E2901E8A357300B79E72 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C30E28F1E8A357300B79E72 /* FBSDKLoginKit.framework */; };
+		2C30E2921E8A36A700B79E72 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C30E2911E8A36A700B79E72 /* FBSDKCoreKit.framework */; };
+		2C30E2941E8A374A00B79E72 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C30E2931E8A374A00B79E72 /* Bolts.framework */; };
+		2C30E2961E8A384A00B79E72 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30E2951E8A384A00B79E72 /* EntryViewController.swift */; };
+		2C30E2991E8A3C5600B79E72 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30E2981E8A3C5600B79E72 /* User.swift */; };
 		EBE54FFB945EB94D8E0F47D5 /* Pods_PowerNap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7536C00250A89C19DF55C80 /* Pods_PowerNap.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +36,11 @@
 		2C179E191E862DC40007EE78 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2C179E1B1E863FE50007EE78 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		2C179E1D1E86455D0007EE78 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2C30E28F1E8A357300B79E72 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		2C30E2911E8A36A700B79E72 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		2C30E2931E8A374A00B79E72 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		2C30E2951E8A384A00B79E72 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		2C30E2981E8A3C5600B79E72 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4A47B695596CE959EB9EB6C4 /* Pods-PowerNap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerNap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerNap/Pods-PowerNap.debug.xcconfig"; sourceTree = "<group>"; };
 		B81FF09DE852FF4EA5449798 /* Pods-PowerNap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerNap.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerNap/Pods-PowerNap.release.xcconfig"; sourceTree = "<group>"; };
 		F7536C00250A89C19DF55C80 /* Pods_PowerNap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerNap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C30E2941E8A374A00B79E72 /* Bolts.framework in Frameworks */,
+				2C30E2901E8A357300B79E72 /* FBSDKLoginKit.framework in Frameworks */,
+				2C30E2921E8A36A700B79E72 /* FBSDKCoreKit.framework in Frameworks */,
 				2C179E1C1E863FE50007EE78 /* AdSupport.framework in Frameworks */,
 				EBE54FFB945EB94D8E0F47D5 /* Pods_PowerNap.framework in Frameworks */,
 			);
@@ -52,6 +65,9 @@
 		2B8C930FF961ACE611951CFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C30E2931E8A374A00B79E72 /* Bolts.framework */,
+				2C30E2911E8A36A700B79E72 /* FBSDKCoreKit.framework */,
+				2C30E28F1E8A357300B79E72 /* FBSDKLoginKit.framework */,
 				2C179E1B1E863FE50007EE78 /* AdSupport.framework */,
 				F7536C00250A89C19DF55C80 /* Pods_PowerNap.framework */,
 			);
@@ -79,6 +95,7 @@
 		2C179E041E8629130007EE78 /* PowerNap */ = {
 			isa = PBXGroup;
 			children = (
+				2C30E2971E8A3C2D00B79E72 /* Model */,
 				2C179E051E8629130007EE78 /* AppDelegate.swift */,
 				2C179E071E8629130007EE78 /* LoginViewController.swift */,
 				2C179E091E8629130007EE78 /* Main.storyboard */,
@@ -88,8 +105,17 @@
 				2C179E171E862CE60007EE78 /* GoogleService-Info.plist */,
 				2C179E191E862DC40007EE78 /* SignUpViewController.swift */,
 				2C179E1D1E86455D0007EE78 /* MainViewController.swift */,
+				2C30E2951E8A384A00B79E72 /* EntryViewController.swift */,
 			);
 			path = PowerNap;
+			sourceTree = "<group>";
+		};
+		2C30E2971E8A3C2D00B79E72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C30E2981E8A3C5600B79E72 /* User.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		895F9F41FBFC4CCC0D3ADEBA /* Pods */ = {
@@ -227,6 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C179E1A1E862DC40007EE78 /* SignUpViewController.swift in Sources */,
+				2C30E2961E8A384A00B79E72 /* EntryViewController.swift in Sources */,
+				2C30E2991E8A3C5600B79E72 /* User.swift in Sources */,
 				2C179E081E8629130007EE78 /* LoginViewController.swift in Sources */,
 				2C179E061E8629130007EE78 /* AppDelegate.swift in Sources */,
 				2C179E1E1E86455D0007EE78 /* MainViewController.swift in Sources */,
@@ -352,6 +380,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2SP49XQ42W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PowerNap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sandeep.PowerNap;
@@ -367,6 +399,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2SP49XQ42W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PowerNap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sandeep.PowerNap;
