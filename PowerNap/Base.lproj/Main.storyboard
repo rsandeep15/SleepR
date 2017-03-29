@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tUV-3W-Yow">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tUV-3W-Yow">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -59,7 +59,7 @@
                     <navigationItem key="navigationItem" id="kWF-hl-Nbz"/>
                     <connections>
                         <outlet property="FBLoginButton" destination="JKS-mF-jNC" id="INJ-qr-N1M"/>
-                        <segue destination="BeC-Sb-bXk" kind="presentation" identifier="fbLogin" id="ebq-CB-FPT"/>
+                        <segue destination="zFn-mT-OXA" kind="presentation" identifier="fbLogin" id="ebq-CB-FPT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -229,7 +229,7 @@
                         <outlet property="firstName" destination="Gem-j5-fhk" id="P8Z-UX-7f2"/>
                         <outlet property="lastName" destination="2hL-Ws-Yp7" id="Ljd-bH-2ff"/>
                         <outlet property="password" destination="d2I-Aw-b00" id="rsv-Ra-Gxt"/>
-                        <segue destination="BeC-Sb-bXk" kind="presentation" identifier="signUpSegue" modalTransitionStyle="flipHorizontal" id="FxB-cc-2c5"/>
+                        <segue destination="zFn-mT-OXA" kind="presentation" identifier="signUpSegue" modalTransitionStyle="flipHorizontal" id="FxB-cc-2c5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2r-te-Wqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -293,7 +293,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="login:" destination="tQV-u0-cBa" eventType="touchUpInside" id="O5D-Rr-QsJ"/>
-                                    <segue destination="BeC-Sb-bXk" kind="presentation" identifier="loginSegue" modalTransitionStyle="flipHorizontal" id="wys-Bc-3jV"/>
+                                    <segue destination="zFn-mT-OXA" kind="presentation" identifier="loginSegue" modalTransitionStyle="flipHorizontal" id="wys-Bc-3jV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -336,7 +336,7 @@
                     <view key="view" contentMode="scaleToFill" id="7E5-QL-nzl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.81319400379999995" green="0.0" blue="0.1059224975" alpha="0.93634952910000002" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="HQf-Nr-SfH">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Plg-bl-Fvk">
@@ -351,7 +351,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAt-qo-DWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4061" y="544"/>
+            <point key="canvasLocation" x="5059" y="543"/>
+        </scene>
+        <!--Tips View Controller-->
+        <scene sceneID="yCV-5l-35i">
+            <objects>
+                <viewController id="UeM-xP-Cgz" customClass="TipsViewController" customModule="PowerNap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zOd-3B-RyL"/>
+                        <viewControllerLayoutGuide type="bottom" id="FXd-8p-mvM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jue-qD-R0F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.28634958430000002" green="0.3239410948" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="r9B-s8-aAq">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Tlg-DJ-J1M">
+                            <connections>
+                                <action selector="logout:" destination="UeM-xP-Cgz" id="DlL-gy-cya"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="tUV-3W-Yow" kind="presentation" identifier="logout" id="QKq-sb-RzD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cse-dI-fmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5059" y="1425"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IU1-Qt-4V4">
@@ -365,17 +393,18 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="txz-bi-abl"/>
-                        <segue destination="BeC-Sb-bXk" kind="presentation" identifier="" id="W0k-yZ-QNO"/>
+                        <segue destination="zFn-mT-OXA" kind="presentation" identifier="" id="W0k-yZ-QNO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIq-KH-m8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-439" y="544"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Alarm-->
         <scene sceneID="Jmr-eu-Qci">
             <objects>
-                <navigationController storyboardIdentifier="mainNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BeC-Sb-bXk" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BeC-Sb-bXk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Alarm" id="frP-YJ-6WG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UiT-4x-OS9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -388,10 +417,48 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaK-Fu-V0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3017" y="544"/>
+            <point key="canvasLocation" x="4014.375" y="542.95774647887322"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="s4A-7q-CQu">
+            <objects>
+                <tabBarController storyboardIdentifier="tabEntry" automaticallyAdjustsScrollViewInsets="NO" id="zFn-mT-OXA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ZE2-gW-jl8">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BeC-Sb-bXk" kind="relationship" relationship="viewControllers" id="q1M-CF-qcV"/>
+                        <segue destination="Bx8-XJ-Fhv" kind="relationship" relationship="viewControllers" id="f9i-3b-1V1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="98W-gO-cSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2961" y="543"/>
+        </scene>
+        <!--TIps-->
+        <scene sceneID="0Zg-PO-GFE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bx8-XJ-Fhv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="TIps" id="X34-kb-bGc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DcC-B0-PQC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UeM-xP-Cgz" kind="relationship" relationship="rootViewController" id="m6o-nm-0Hb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EaQ-iJ-eq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4014" y="1425"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ebq-CB-FPT"/>
+        <segue reference="QKq-sb-RzD"/>
+        <segue reference="wys-Bc-3jV"/>
     </inferredMetricsTieBreakers>
 </document>

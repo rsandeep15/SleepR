@@ -26,9 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (FIRAuth.auth()?.currentUser != nil || FBSDKAccessToken.current() != nil) {
             self.window = UIWindow(frame: UIScreen.main.bounds)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let initialVC = storyboard.instantiateViewController(withIdentifier: "mainVC")
-            let navigationController = UINavigationController(rootViewController: initialVC)
-            self.window?.rootViewController = navigationController
+            let initialVC = storyboard.instantiateViewController(withIdentifier: "tabEntry") as! UITabBarController
+            self.window?.rootViewController = initialVC
             self.window?.makeKeyAndVisible()
             return true
         }

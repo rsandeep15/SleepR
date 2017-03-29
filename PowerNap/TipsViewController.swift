@@ -1,8 +1,8 @@
 //
-//  MainViewController.swift
+//  TipsViewController.swift
 //  PowerNap
 //
-//  Created by Sandeep Raghunandhan on 3/24/17.
+//  Created by Sandeep Raghunandhan on 3/28/17.
 //  Copyright © 2017 Sandeep Raghunandhan. All rights reserved.
 //
 
@@ -10,16 +10,14 @@ import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
 
-class MainViewController: UIViewController {
-    
-    
+class TipsViewController: UIViewController {
     let auth: FIRAuth = FIRAuth.auth()!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,7 +27,7 @@ class MainViewController: UIViewController {
         do {
             // logout a facebook user
             if (FBSDKAccessToken.current() != nil) {
-                 FBSDKAccessToken.setCurrent(nil)
+                FBSDKAccessToken.setCurrent(nil)
             }
             
             // logout the firebase user
@@ -53,6 +51,5 @@ class MainViewController: UIViewController {
             return false
         }
     }
-    
 
 }
