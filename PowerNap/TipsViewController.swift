@@ -9,12 +9,20 @@
 import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
+import FirebaseDatabase
 
-class TipsViewController: UIViewController {
+class TipsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+
     let auth: FIRAuth = FIRAuth.auth()!
+    let dbRef = FIRDatabase.database().reference()
+    
+    @IBOutlet weak var tipsCollection: UICollectionView!
+    var tips:[Tip] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tipsCollection.dataSource = self
+        fetchTips()
         // Do any additional setup after loading the view.
     }
     
@@ -22,6 +30,22 @@ class TipsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func fetchTips() {
+        dbRef.child("tips").observe(.value) { (snap: FIRDataSnapshot) in
+            for tipShot in snap.children {
+                let snapshot = tipShot as! FIRDataSnapshot
+                let tipEntry = snapshot.value as! NSDictionary
+                
+                let tip = Tip()
+                tip.textDescription = tipEntry.value(forKeyPath: "description") as? String
+                tip.source = tipEntry.value(forKey: "source") as? String
+                self.tips.append(tip)
+                self.tipsCollection.reloadData()
+            }
+        }
+    }
+    
     
     @IBAction func logout(_ sender: Any) {
         do {
@@ -51,5 +75,20 @@ class TipsViewController: UIViewController {
             return false
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tips.count
+    
+    }
+    
+
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let tipCell = tipsCollection.dequeueReusableCell(withReuseIdentifier: "tipCell", for: indexPath) as! TipCell
+        tipCell.tip = tips[indexPath.row]
+        
+        return tipCell
+    }
+    
 
 }

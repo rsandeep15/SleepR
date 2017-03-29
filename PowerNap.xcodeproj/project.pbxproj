@@ -22,6 +22,8 @@
 		2C30E2961E8A384A00B79E72 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30E2951E8A384A00B79E72 /* EntryViewController.swift */; };
 		2C30E2991E8A3C5600B79E72 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30E2981E8A3C5600B79E72 /* User.swift */; };
 		2CD6C9401E8B7415004F65BC /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */; };
+		2CD6C9421E8B7934004F65BC /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C9411E8B7934004F65BC /* Tip.swift */; };
+		2CD6C9441E8B7FA6004F65BC /* TipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C9431E8B7FA6004F65BC /* TipCell.swift */; };
 		EBE54FFB945EB94D8E0F47D5 /* Pods_PowerNap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7536C00250A89C19DF55C80 /* Pods_PowerNap.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		2C30E2951E8A384A00B79E72 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		2C30E2981E8A3C5600B79E72 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+		2CD6C9411E8B7934004F65BC /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
+		2CD6C9431E8B7FA6004F65BC /* TipCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCell.swift; sourceTree = "<group>"; };
 		4A47B695596CE959EB9EB6C4 /* Pods-PowerNap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerNap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerNap/Pods-PowerNap.debug.xcconfig"; sourceTree = "<group>"; };
 		B81FF09DE852FF4EA5449798 /* Pods-PowerNap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerNap.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerNap/Pods-PowerNap.release.xcconfig"; sourceTree = "<group>"; };
 		F7536C00250A89C19DF55C80 /* Pods_PowerNap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerNap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				2C30E2981E8A3C5600B79E72 /* User.swift */,
+				2CD6C9411E8B7934004F65BC /* Tip.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 		2CD6C93C1E8B73A0004F65BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2CD6C9431E8B7FA6004F65BC /* TipCell.swift */,
 				2C179E191E862DC40007EE78 /* SignUpViewController.swift */,
 				2C179E071E8629130007EE78 /* LoginViewController.swift */,
 				2C179E1D1E86455D0007EE78 /* MainViewController.swift */,
@@ -264,7 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C179E1A1E862DC40007EE78 /* SignUpViewController.swift in Sources */,
+				2CD6C9421E8B7934004F65BC /* Tip.swift in Sources */,
 				2C30E2961E8A384A00B79E72 /* EntryViewController.swift in Sources */,
+				2CD6C9441E8B7FA6004F65BC /* TipCell.swift in Sources */,
 				2CD6C9401E8B7415004F65BC /* TipsViewController.swift in Sources */,
 				2C30E2991E8A3C5600B79E72 /* User.swift in Sources */,
 				2C179E081E8629130007EE78 /* LoginViewController.swift in Sources */,
