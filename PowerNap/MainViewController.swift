@@ -12,12 +12,16 @@ import FBSDKLoginKit
 
 class MainViewController: UIViewController {
     
-    
+    @IBOutlet weak var startButton: UIButton!
+ 
+    @IBOutlet weak var cancelButton: UIButton!
     let auth: FIRAuth = FIRAuth.auth()!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        // format the button 
+        startButton.layer.cornerRadius = 40
+        cancelButton.layer.cornerRadius = 40
     }
 
     override func didReceiveMemoryWarning() {
