@@ -353,6 +353,9 @@
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onStart:" destination="kjp-ib-QVR" eventType="touchUpInside" id="cyN-kJ-HCa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFQ-cn-8At">
                                 <rect key="frame" x="108" y="290" width="80" height="80"/>
@@ -416,7 +419,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tipCell" id="T57-wv-UkW" customClass="TipCell" customModule="PowerNap" customModuleProvider="target">
-                                        <rect key="frame" x="52" y="0.0" width="311" height="129"/>
+                                        <rect key="frame" x="51.5" y="0.0" width="311" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="311" height="129"/>

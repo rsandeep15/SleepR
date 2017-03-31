@@ -12,6 +12,9 @@ import FBSDKLoginKit
 
 class MainViewController: UIViewController {
     
+    var timeMin = 20;
+    var timeSec = 0;
+    
     @IBOutlet weak var startButton: UIButton!
  
     @IBOutlet weak var cancelButton: UIButton!
@@ -57,6 +60,23 @@ class MainViewController: UIViewController {
             return false
         }
     }
+    
+    @IBAction func onStart(_ sender: Any) {
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementTime), userInfo: nil, repeats: true)
+        
+    }
+    
+    func decrementTime() {
+        if (timeSec == 0) {
+            timeMin -= 1;
+            timeSec = 59;
+        }
+        else {
+            timeSec -= 1;
+        }
+        print("\(timeMin) : \(timeSec)")
+    }
+    
     
 
 }
