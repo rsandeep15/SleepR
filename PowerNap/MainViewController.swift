@@ -66,7 +66,12 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func onStart(_ sender: Any) {
+        if let timer = timer {
+            // Do Nothing 
+        }
+        else {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementTime), userInfo: nil, repeats: true)
+        }
         
     }
     
