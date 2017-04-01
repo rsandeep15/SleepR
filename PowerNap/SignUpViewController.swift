@@ -29,6 +29,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     let dbRef = FIRDatabase.database().reference()
     var ages: [String] = []
     
+    @IBOutlet weak var signUpButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -38,9 +39,12 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         agePicker.delegate = self
         agePicker.dataSource = self
         agePicker.reloadAllComponents()
-        
+        agePicker.selectRow(17, inComponent: 0, animated: false)
         
         // Do any additional setup after loading the view.
+        agePicker.layer.cornerRadius = 5
+        signUpButton.layer.cornerRadius = 5
+        
     }
     
     func initializeAges() {

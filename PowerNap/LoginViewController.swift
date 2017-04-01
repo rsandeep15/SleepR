@@ -17,9 +17,13 @@ class LoginViewController: UIViewController {
     
     let auth: FIRAuth = FIRAuth.auth()!
     
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        loginButton.layer.cornerRadius = 5
     }
 
     override func didReceiveMemoryWarning() {

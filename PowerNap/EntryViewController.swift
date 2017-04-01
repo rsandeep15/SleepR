@@ -15,16 +15,28 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var FBLoginButton: FBSDKLoginButton!
     var auth: FIRAuth?
     
+    @IBOutlet weak var loginButton: UIButton!
+    
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // hide navigation bar on first viewcontroller
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         auth = FIRAuth.auth()!
         super.viewDidLoad()
         FBLoginButton.delegate = self
         FBLoginButton.readPermissions = ["email", "public_profile", "user_friends", "user_about_me"]
         FBSDKProfile.enableUpdates(onAccessTokenChange: true)
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.onProfileUpdated(notification:)), name:NSNotification.Name.FBSDKProfileDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.onProfileFetched(notification:)), name: NSNotification.Name.FIRAuthStateDidChange, object: nil)
         
-        // Do any additional setup after loading the view.
+        // Round edges of login and sign up
+        loginButton.layer.cornerRadius = 5
+        signUpButton.layer.cornerRadius = 5
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,6 +89,10 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.performSegue(withIdentifier: "fbLogin", sender: self)
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
     
 
     /*
