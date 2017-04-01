@@ -37,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eA-ab-26e">
-                                <rect key="frame" x="180" y="674" width="55" height="30"/>
+                                <rect key="frame" x="179.66666666666666" y="674" width="55" height="30"/>
                                 <color key="backgroundColor" red="0.99167607599999996" green="0.98613664219999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
@@ -338,13 +338,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 : 00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ij-sP-RdR">
-                                <rect key="frame" x="108" y="184" width="198" height="76"/>
+                                <rect key="frame" x="107" y="184" width="200" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Bp5-1X-vRk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="63"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4M-3b-TuT">
-                                <rect key="frame" x="226" y="290" width="80" height="80"/>
+                                <rect key="frame" x="227" y="290" width="80" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.78011933659999999" blue="0.42556445069999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="6rv-Df-y00"/>
@@ -358,7 +361,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFQ-cn-8At">
-                                <rect key="frame" x="108" y="290" width="80" height="80"/>
+                                <rect key="frame" x="107" y="290" width="80" height="80"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="4Np-yv-hLV"/>
@@ -367,11 +370,15 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCancel:" destination="kjp-ib-QVR" eventType="touchUpInside" id="GfY-2b-ucx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14242556421888486" green="0.16182020241517792" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="8Ij-sP-RdR" firstAttribute="top" secondItem="obx-Ub-E6q" secondAttribute="bottom" constant="120" id="6S7-LR-yHP"/>
+                            <constraint firstItem="r4M-3b-TuT" firstAttribute="leading" secondItem="kFQ-cn-8At" secondAttribute="trailing" constant="40" id="8RA-95-82Y"/>
                             <constraint firstItem="kFQ-cn-8At" firstAttribute="top" secondItem="8Ij-sP-RdR" secondAttribute="bottom" constant="30" id="H4y-Tf-Iif"/>
                             <constraint firstItem="8Ij-sP-RdR" firstAttribute="centerX" secondItem="7E5-QL-nzl" secondAttribute="centerX" id="Oai-Wr-drx"/>
                             <constraint firstItem="kFQ-cn-8At" firstAttribute="leading" secondItem="8Ij-sP-RdR" secondAttribute="leading" id="eJ6-vt-nxD"/>
@@ -389,6 +396,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="kFQ-cn-8At" id="A8u-uu-Lgt"/>
                         <outlet property="startButton" destination="r4M-3b-TuT" id="XKd-2m-c5j"/>
+                        <outlet property="timeLeft" destination="8Ij-sP-RdR" id="6aV-Sn-Txq"/>
                         <segue destination="tUV-3W-Yow" kind="presentation" identifier="logout" id="mkI-vK-xgc"/>
                     </connections>
                 </viewController>
@@ -419,7 +427,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tipCell" id="T57-wv-UkW" customClass="TipCell" customModule="PowerNap" customModuleProvider="target">
-                                        <rect key="frame" x="51.5" y="0.0" width="311" height="129"/>
+                                        <rect key="frame" x="51.666666666666664" y="0.0" width="311" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="311" height="129"/>

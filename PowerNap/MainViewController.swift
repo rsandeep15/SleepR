@@ -15,9 +15,13 @@ class MainViewController: UIViewController {
     var timeMin = 20;
     var timeSec = 0;
     
+    @IBOutlet weak var timeLeft: UILabel!
     @IBOutlet weak var startButton: UIButton!
  
     @IBOutlet weak var cancelButton: UIButton!
+    
+    var timer: Timer?
+    
     let auth: FIRAuth = FIRAuth.auth()!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +66,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func onStart(_ sender: Any) {
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementTime), userInfo: nil, repeats: true)
         
     }
     
@@ -74,9 +78,29 @@ class MainViewController: UIViewController {
         else {
             timeSec -= 1;
         }
-        print("\(timeMin) : \(timeSec)")
+        if (timeSec < 10 ) {
+            timeLeft.text = "\(timeMin) : 0\(timeSec)"
+            return
+        }
+        
+        if (timeSec < 0 && timeMin < 0) {
+            print("Timer Done!")
+        }
+        
+        
+        timeLeft.text = "\(timeMin) : \(timeSec)"
     }
     
+    @IBAction func onCancel(_ sender: Any) {
+        if let timer = timer {
+            timer.invalidate()
+            self.timer = nil
+            // Reset timer
+            timeLeft.text = "20 : 00"
+            timeMin = 20;
+            timeSec = 0;
+        }
+    }
     
 
 }
