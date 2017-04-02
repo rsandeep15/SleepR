@@ -614,7 +614,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wys-Bc-3jV"/>
         <segue reference="mkI-vK-xgc"/>
+        <segue reference="wys-Bc-3jV"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,8 +9,9 @@
 import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
+import AVFoundation
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, AVAudioPlayerDelegate {
     
     var timeMin = 20;
     var timeSec = 0;
@@ -23,6 +24,9 @@ class MainViewController: UIViewController {
     var timer: Timer?
     
     let auth: FIRAuth = FIRAuth.auth()!
+    
+    var player = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -70,7 +74,7 @@ class MainViewController: UIViewController {
             // Do Nothing 
         }
         else {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementTime), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementTime), userInfo: nil, repeats: true)
         }
         
     }
@@ -83,13 +87,24 @@ class MainViewController: UIViewController {
         else {
             timeSec -= 1;
         }
+        
+        if (timeSec <= 0 && timeMin <= 0) {
+            playAlarm()
+            let alert = UIAlertController(title: "Alarm", message: "Your nap has ended. Rise and shine!", preferredStyle: UIAlertControllerStyle.alert)
+            let stopAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction) in
+                // Turn off the alarm
+                self.player.stop()
+            })
+            alert.addAction(stopAction)
+            self.present(alert, animated: true, completion: {
+            })
+            
+            resetTimer()
+        }
+        
         if (timeSec < 10 ) {
             timeLeft.text = "\(timeMin) : 0\(timeSec)"
             return
-        }
-        
-        if (timeSec < 0 && timeMin < 0) {
-            print("Timer Done!")
         }
         
         
@@ -97,6 +112,10 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func onCancel(_ sender: Any) {
+        resetTimer()
+    }
+    
+    func resetTimer() {
         if let timer = timer {
             timer.invalidate()
             self.timer = nil
@@ -104,6 +123,21 @@ class MainViewController: UIViewController {
             timeLeft.text = "20 : 00"
             timeMin = 20;
             timeSec = 0;
+        }
+    }
+    
+    func playAlarm() {
+        do {
+            let powerNapFile: String = Bundle.main.path(forResource: "PowerNapAlarm", ofType: "mp3")!
+            self.player = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: powerNapFile))
+            player.numberOfLoops = -1
+            player.volume = 1
+            player.prepareToPlay()
+            player.delegate = self
+            player.play()
+        }
+        catch let error {
+            print(error.localizedDescription)
         }
     }
     

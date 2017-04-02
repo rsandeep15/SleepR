@@ -21,6 +21,7 @@
 		2C30E2941E8A374A00B79E72 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C30E2931E8A374A00B79E72 /* Bolts.framework */; };
 		2C30E2961E8A384A00B79E72 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30E2951E8A384A00B79E72 /* EntryViewController.swift */; };
 		2C30E2991E8A3C5600B79E72 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30E2981E8A3C5600B79E72 /* User.swift */; };
+		2CAA5D591E908AA200585EFE /* PowerNapAlarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CAA5D581E908AA200585EFE /* PowerNapAlarm.mp3 */; };
 		2CD6C9401E8B7415004F65BC /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */; };
 		2CD6C9421E8B7934004F65BC /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C9411E8B7934004F65BC /* Tip.swift */; };
 		2CD6C9441E8B7FA6004F65BC /* TipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C9431E8B7FA6004F65BC /* TipCell.swift */; };
@@ -44,6 +45,7 @@
 		2C30E2931E8A374A00B79E72 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		2C30E2951E8A384A00B79E72 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		2C30E2981E8A3C5600B79E72 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2CAA5D581E908AA200585EFE /* PowerNapAlarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = PowerNapAlarm.mp3; path = PowerNap/PowerNapAlarm.mp3; sourceTree = "<group>"; };
 		2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		2CD6C9411E8B7934004F65BC /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		2CD6C9431E8B7FA6004F65BC /* TipCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCell.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		2C179DF91E8629120007EE78 = {
 			isa = PBXGroup;
 			children = (
+				2CAA5D581E908AA200585EFE /* PowerNapAlarm.mp3 */,
 				2C179E041E8629130007EE78 /* PowerNap */,
 				2C179E031E8629130007EE78 /* Products */,
 				895F9F41FBFC4CCC0D3ADEBA /* Pods */,
@@ -210,6 +213,7 @@
 				2C179E101E8629130007EE78 /* LaunchScreen.storyboard in Resources */,
 				2C179E181E862CE60007EE78 /* GoogleService-Info.plist in Resources */,
 				2C179E0D1E8629130007EE78 /* Assets.xcassets in Resources */,
+				2CAA5D591E908AA200585EFE /* PowerNapAlarm.mp3 in Resources */,
 				2C179E0B1E8629130007EE78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
