@@ -61,6 +61,7 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        // Only perform the segue if the user has been properly logged out
         if (auth.currentUser == nil) {
             return true
         }
@@ -70,24 +71,28 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func onStart(_ sender: Any) {
+        // Instantiate a timer object if one has not been created yet
         if let timer = timer {
-            // Do Nothing 
+            // Do Nothing. Singleton Pattern.
         }
         else {
+            // Timer calls the decrement time method every second.
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementTime), userInfo: nil, repeats: true)
         }
         
     }
     
     func decrementTime() {
+        // Case to count down the minute
         if (timeSec == 0) {
             timeMin -= 1;
             timeSec = 59;
         }
+        // Decrement the second
         else {
             timeSec -= 1;
         }
-        
+        // When the time hits 0, play the alarm sound
         if (timeSec <= 0 && timeMin <= 0) {
             playAlarm()
             let alert = UIAlertController(title: "Alarm", message: "Your nap has ended. Rise and shine!", preferredStyle: UIAlertControllerStyle.alert)
@@ -96,21 +101,23 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
                 self.player.stop()
             })
             alert.addAction(stopAction)
+            
+            // Show the alarm
             self.present(alert, animated: true, completion: {
             })
             
             resetTimer()
         }
-        
+        // Add leading 0 to time (when less than 10 seconds)
         if (timeSec < 10 ) {
             timeLeft.text = "\(timeMin) : 0\(timeSec)"
             return
         }
-        
-        
+        // Update the time displayed
         timeLeft.text = "\(timeMin) : \(timeSec)"
     }
     
+    // Reset the time to 20 mins
     @IBAction func onCancel(_ sender: Any) {
         resetTimer()
     }
@@ -128,8 +135,10 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
     
     func playAlarm() {
         do {
+            // Using a mp3 created on GarageBand
             let powerNapFile: String = Bundle.main.path(forResource: "PowerNapAlarm", ofType: "mp3")!
             self.player = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: powerNapFile))
+            // Keep playing the file infinitely
             player.numberOfLoops = -1
             player.volume = 5
             player.prepareToPlay()
