@@ -455,7 +455,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xi8-8x-WKC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.31372549020000001" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OYQ-Wl-9Bk">
                                     <size key="itemSize" width="311" height="129"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -502,7 +502,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.29803921570000003" green="0.31372549020000001" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="xi8-8x-WKC" firstAttribute="top" secondItem="Jue-qD-R0F" secondAttribute="top" id="EAm-cD-n31"/>
                             <constraint firstItem="FXd-8p-mvM" firstAttribute="top" secondItem="xi8-8x-WKC" secondAttribute="bottom" id="TQY-R6-dfi"/>
@@ -596,10 +596,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bx8-XJ-Fhv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tips" id="X34-kb-bGc"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DcC-B0-PQC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="DcC-B0-PQC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.33070701315318263" green="0.33070701315318263" blue="0.33070701315318263" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.28634958430000002" green="0.3239410948" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.99167607599999996" green="0.98613664219999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
@@ -615,7 +615,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="W0k-yZ-QNO"/>
         <segue reference="QKq-sb-RzD"/>
-        <segue reference="wys-Bc-3jV"/>
     </inferredMetricsTieBreakers>
 </document>
