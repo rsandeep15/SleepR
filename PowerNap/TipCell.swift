@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TipCell: UICollectionViewCell {
+class TipCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     var tip: Tip! {
         didSet {
             if let descriptionEntry = tip.textDescription {
@@ -21,4 +21,9 @@ class TipCell: UICollectionViewCell {
     }
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.layer.cornerRadius = 5;
+    }
+ 
 }

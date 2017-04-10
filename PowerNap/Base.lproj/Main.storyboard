@@ -485,6 +485,7 @@
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="kc9-F6-p7M" secondAttribute="trailing" constant="8" id="0qn-wq-k8M"/>
                                             <constraint firstAttribute="bottom" secondItem="kc9-F6-p7M" secondAttribute="bottom" constant="5" id="SFP-mQ-Mty"/>
@@ -614,7 +615,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mkI-vK-xgc"/>
+        <segue reference="QKq-sb-RzD"/>
         <segue reference="wys-Bc-3jV"/>
     </inferredMetricsTieBreakers>
 </document>

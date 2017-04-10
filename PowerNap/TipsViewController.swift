@@ -22,6 +22,7 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         tipsCollection.dataSource = self
+        tipsCollection.delegate = self
         fetchTips()
         // Do any additional setup after loading the view.
     }
@@ -88,6 +89,15 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
         tipCell.tip = tips[indexPath.row]
         
         return tipCell
+    }
+    
+    // When a tip cell is tapped, open the URL from where the tip was fetched
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let tipCell = tipsCollection.cellForItem(at: indexPath) as! TipCell
+        let tipURL = URL(string: tipCell.tip.source!)
+        if UIApplication.shared.canOpenURL(tipURL!) {
+            UIApplication.shared.open(tipURL!, options: [:], completionHandler: nil)
+        }
     }
     
 
