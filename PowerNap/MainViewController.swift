@@ -34,7 +34,7 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
         startButton.layer.cornerRadius = 40
         cancelButton.layer.cornerRadius = 40
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

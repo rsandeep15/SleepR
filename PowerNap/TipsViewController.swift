@@ -19,12 +19,22 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var tipsCollection: UICollectionView!
     var tips:[Tip] = []
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tipsCollection.dataSource = self
         tipsCollection.delegate = self
         fetchTips()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tipsCollection.alpha = 0
+        UIView.animate(withDuration: 0.4, animations: {() -> Void in
+            self.tipsCollection.alpha = 1
+        })
     }
     
     override func didReceiveMemoryWarning() {

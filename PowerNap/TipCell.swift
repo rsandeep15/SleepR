@@ -23,7 +23,11 @@ class TipCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     @IBOutlet weak var sourceLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.alpha = 0
         self.layer.cornerRadius = 5;
+        UIView.animate(withDuration: 0.5, animations: {() -> Void in
+            self.alpha = 1
+        })
     }
  
 }
