@@ -10,11 +10,14 @@ import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
 import AVFoundation
+import UserNotifications
 
-class MainViewController: UIViewController, AVAudioPlayerDelegate {
+class MainViewController: UIViewController, AVAudioPlayerDelegate{
     
     var timeMin = 20;
     var timeSec = 0;
+    
+    var startTime: Double = 0;
     
     @IBOutlet weak var timeLeft: UILabel!
     @IBOutlet weak var startButton: UIButton!
@@ -76,29 +79,47 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
             // Do Nothing. Singleton Pattern.
         }
         else {
+            startTime = NSDate().timeIntervalSince1970
             // Timer calls the decrement time method every second.
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementTime), userInfo: nil, repeats: true)
+            
+            // Setup notification 
+            let content = UNMutableNotificationContent()
+            content.title = "Power Nap"
+            content.body = "Rise and Shine! Your nap has ended"
+            content.sound = UNNotificationSound.default()
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20*60, repeats: false)
+            
+            // Schedule the notification
+            let request = UNNotificationRequest(identifier: "alarm", content: content, trigger: trigger)
+            let center = UNUserNotificationCenter.current()
+            center.add(request, withCompletionHandler: nil)
         }
         
     }
     
     func decrementTime() {
+        var currentTime = NSDate().timeIntervalSince1970
+        
+        print("Start Time: \(startTime)")
+        print("Current Time: \(currentTime)")
         // Case to count down the minute
         if (timeSec == 0) {
-            timeMin -= 1;
+            timeMin = 20 - (Int(currentTime - startTime))/60 - 1
             timeSec = 59;
         }
         // Decrement the second
         else {
-            timeSec -= 1;
+            timeSec = 59 - (Int(currentTime - startTime) % 60);
         }
         // When the time hits 0, play the alarm sound
         if (timeSec <= 0 && timeMin <= 0) {
-            playAlarm()
+//            playAlarm()
             let alert = UIAlertController(title: "Alarm", message: "Your nap has ended. Rise and shine!", preferredStyle: UIAlertControllerStyle.alert)
             let stopAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction) in
                 // Turn off the alarm
-                self.player.stop()
+//                self.player.stop()
             })
             alert.addAction(stopAction)
             
@@ -111,14 +132,17 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
         // Add leading 0 to time (when less than 10 seconds)
         if (timeSec < 10 ) {
             timeLeft.text = "\(timeMin) : 0\(timeSec)"
+            print(timeLeft.text)
             return
         }
         // Update the time displayed
         timeLeft.text = "\(timeMin) : \(timeSec)"
+        print(timeLeft.text)
     }
     
     // Reset the time to 20 mins
     @IBAction func onCancel(_ sender: Any) {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         resetTimer()
     }
     
@@ -128,8 +152,9 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
             self.timer = nil
             // Reset timer
             timeLeft.text = "20 : 00"
-            timeMin = 20;
-            timeSec = 0;
+            timeMin = 20
+            timeSec = 0
+            startTime = 0
         }
     }
     
@@ -149,6 +174,7 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
             print(error.localizedDescription)
         }
     }
+    
     
 
 }
