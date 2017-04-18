@@ -33,10 +33,6 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate {
         FBLoginButton.readPermissions = ["email", "public_profile", "user_friends", "user_about_me"]
         FBSDKProfile.enableUpdates(onAccessTokenChange: true)
         NotificationCenter.default.addObserver(self, selector: #selector(self.onProfileFetched(notification:)), name: NSNotification.Name.FIRAuthStateDidChange, object: nil)
-        
-        // Round edges of login and sign up
-        loginButton.layer.cornerRadius = 5
-        signUpButton.layer.cornerRadius = 5
     }
 
     override func didReceiveMemoryWarning() {
