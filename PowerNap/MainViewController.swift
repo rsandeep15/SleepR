@@ -75,7 +75,7 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate{
     
     @IBAction func onStart(_ sender: Any) {
         // Instantiate a timer object if one has not been created yet
-        if let timer = timer {
+        if timer != nil {
             // Do Nothing. Singleton Pattern.
         }
         else {
@@ -100,7 +100,7 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate{
     }
     
     func decrementTime() {
-        var currentTime = NSDate().timeIntervalSince1970
+        let currentTime = NSDate().timeIntervalSince1970
         
         print("Start Time: \(startTime)")
         print("Current Time: \(currentTime)")
@@ -132,12 +132,10 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate{
         // Add leading 0 to time (when less than 10 seconds)
         if (timeSec < 10 ) {
             timeLeft.text = "\(timeMin) : 0\(timeSec)"
-            print(timeLeft.text)
             return
         }
         // Update the time displayed
         timeLeft.text = "\(timeMin) : \(timeSec)"
-        print(timeLeft.text)
     }
     
     // Reset the time to 20 mins

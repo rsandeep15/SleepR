@@ -77,7 +77,6 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate {
         let userUid = user.uid
         
         let firstName = profile.firstName!
-        let lastName = profile.lastName!
         let email = user.email!
         let age = ""
         

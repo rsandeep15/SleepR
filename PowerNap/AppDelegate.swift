@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Notification Registration 
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) { (granted: Bool, error: Error?) in
-            if let error = error {
+            if error != nil {
                 print("Notifications permission denied")
             }
         }

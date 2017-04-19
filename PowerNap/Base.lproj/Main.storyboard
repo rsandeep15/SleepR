@@ -44,7 +44,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="tQV-u0-cBa" kind="showDetail" action="showViewController:sender:" id="Y8k-RH-ruc"/>
+                                            <segue destination="tQV-u0-cBa" kind="showDetail" identifier="loginEntry" action="showViewController:sender:" id="Y8k-RH-ruc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eA-ab-26e">
@@ -54,7 +54,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="tte-Ty-zps" kind="showDetail" action="showViewController:sender:" id="9Xd-rN-gn5"/>
+                                            <segue destination="tte-Ty-zps" kind="showDetail" identifier="signUpEntry" action="showViewController:sender:" id="9Xd-rN-gn5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -487,7 +487,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="txz-bi-abl"/>
-                        <segue destination="zFn-mT-OXA" kind="presentation" identifier="" id="W0k-yZ-QNO"/>
+                        <segue destination="zFn-mT-OXA" kind="presentation" identifier="shortCut" id="W0k-yZ-QNO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIq-KH-m8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -561,7 +561,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="ebq-CB-FPT"/>
         <segue reference="mkI-vK-xgc"/>
-        <segue reference="FxB-cc-2c5"/>
     </inferredMetricsTieBreakers>
 </document>
