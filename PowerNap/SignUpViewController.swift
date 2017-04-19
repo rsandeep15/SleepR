@@ -14,15 +14,12 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
     
     @IBOutlet weak var agePicker: UIPickerView!
-    @IBOutlet weak var firstName: UITextField!
-
-    @IBOutlet weak var lastName: UITextField!
+  
+    @IBOutlet weak var nameText: UITextField!
     
     @IBOutlet weak var email: UITextField!
     
     @IBOutlet weak var password: UITextField!
-    
-    @IBOutlet weak var confirmPass: UITextField!
     
     @IBOutlet weak var errorMessage: UILabel!
     let auth = FIRAuth.auth()
@@ -60,7 +57,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func validateForm() -> Bool {
         // Check if names were entered
-        if (firstName.text! == "" || lastName.text! == "") {
+        if (nameText.text! == "") {
             errorMessage.text = "Please enter a valid name"
             return false
         }
@@ -74,11 +71,6 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             errorMessage.text = "Please enter a valid password"
             return false
         }
-        // Check if passwords match
-        if (password.text != confirmPass.text) {
-            errorMessage.text = "Passwords do not match"
-            return false
-        }
        
         return true
     }
@@ -90,15 +82,14 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 if let user = user {
                     let changeRequest = user.profileChangeRequest()
                     // Set the display name of the user
-                    let firstNameText: String = self.firstName.text ?? "John"
+                    let firstNameText: String = self.nameText.text ?? "John"
                     changeRequest.displayName = firstNameText
                     
-                    let lastNameText: String = self.lastName.text ?? "Smith"
                     let emailText: String = self.email.text ?? "testuser@email.com"
                     // Get the selected age from the UIPickerView
                     let age = self.ages[self.agePicker.selectedRow(inComponent: 0)]
                     
-                    User.addUser(useruid: user.uid, firstName: firstNameText, lastName: lastNameText, email: emailText, age: age)
+                    User.addUser(useruid: user.uid, name: firstNameText, email: emailText, age: age)
                     
                     self.performSegue(withIdentifier: "signUpSegue", sender: self)
                 }
