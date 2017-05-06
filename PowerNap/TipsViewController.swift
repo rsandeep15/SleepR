@@ -18,7 +18,7 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBOutlet weak var tipsCollection: UICollectionView!
     var tips:[Tip] = []
-    
+    var autofetch = true;
 
     
     override func viewDidLoad() {
@@ -47,17 +47,19 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func fetchTips() {
         dbRef.child("tips").observe(.value) { (snap: FIRDataSnapshot) in
-            self.tips = []
-            for tipShot in snap.children {
-                let snapshot = tipShot as! FIRDataSnapshot
-                let tipEntry = snapshot.value as! NSDictionary
-                
-                let tip = Tip()
-                tip.textDescription = tipEntry.value(forKeyPath: "description") as? String
-                tip.source = tipEntry.value(forKey: "source") as? String
-                tip.index = snapshot.key
-                self.tips.append(tip)
-                self.tipsCollection.reloadData()
+            if self.autofetch {
+                self.tips = []
+                for tipShot in snap.children {
+                    let snapshot = tipShot as! FIRDataSnapshot
+                    let tipEntry = snapshot.value as! NSDictionary
+                    
+                    let tip = Tip()
+                    tip.textDescription = tipEntry.value(forKeyPath: "description") as? String
+                    tip.source = tipEntry.value(forKey: "source") as? String
+                    tip.index = snapshot.key
+                    self.tips.append(tip)
+                    self.tipsCollection.reloadData()
+                }
             }
         }
     }
@@ -125,15 +127,15 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
         if let path = swipedIndexPath {
             let cell = tipsCollection.cellForItem(at: path) as? TipCell
             if let cell = cell {
-                var ogCenter = cell.center
                 let tipState = sender.state
+                let ogCenter = cell.center.x
                 if tipState == .began {
-                    ogCenter = cell.center
+                    cell.center.x = view.center.x
                 }
                 if tipState == .changed {
                     if translation.x < 0 {
-                    cell.center = CGPoint(x: ogCenter.x + translation.x, y: (ogCenter.y))
-                    sender.setTranslation(CGPoint(x: 0.0, y: 0.0), in: self.view)
+                        cell.center.x = ogCenter + translation.x
+                        sender.setTranslation(CGPoint(x: 0.0, y: 0.0), in: self.view)
                     }
                 }
                 if tipState == .ended {
@@ -141,13 +143,18 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
                         cell.center.x = view.center.x
                         tips.remove(at: path.row)
                         tipsCollection.reloadData()
+                        self.autofetch = false
                         DispatchQueue.global(qos: .background).async {
-                            Tip.removeTip(id: cell.tip.index!)
+                            Tip.removeTip(id: cell.tip.index!, completion: { (result: String) in
+                                self.autofetch = true
+                            })
                         }
+     
                     }
                     else {
                         cell.center.x = view.center.x
                     }
+                    sender.setTranslation(CGPoint(x: 0.0, y: 0.0), in: self.view)
                 }
             }
         }

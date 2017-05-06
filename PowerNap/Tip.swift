@@ -20,7 +20,9 @@ class Tip: NSObject {
             DBRef.child("tips").child(tipId).setValue(["description" : tip, "source" : username])
         }
     }
-    class func removeTip(id: String) {
-        DBRef.child("tips").child(id).removeValue()
+    class func removeTip(id: String, completion: @escaping (_ result: String)->()) {
+        DBRef.child("tips").child(id).removeValue { (error: Error?, db: FIRDatabaseReference) in
+            completion("Success")
+        }
     }
 }
