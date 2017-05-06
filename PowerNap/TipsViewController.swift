@@ -43,6 +43,7 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func fetchTips() {
+        tips = [] 
         dbRef.child("tips").observe(.value) { (snap: FIRDataSnapshot) in
             for tipShot in snap.children {
                 let snapshot = tipShot as! FIRDataSnapshot
@@ -110,5 +111,8 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
+    @IBAction func onAdd(_ sender: Any) {
+        self.performSegue(withIdentifier: "addTip", sender: nil)
+    }
 
 }

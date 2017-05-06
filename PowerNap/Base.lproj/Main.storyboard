@@ -343,7 +343,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFQ-cn-8At">
                                 <rect key="frame" x="87.5" y="290" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.91916708141414039" green="0.19825172344226558" blue="0.19825172344226558" alpha="0.93634952910000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.69124633973577643" blue="0.24697913345364242" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="4Np-yv-hLV"/>
                                     <constraint firstAttribute="width" constant="80" id="mbr-8x-UDk"/>
@@ -463,15 +463,74 @@
                                 <action selector="logout:" destination="UeM-xP-Cgz" id="DlL-gy-cya"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="egw-oM-kSY">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="onAdd:" destination="UeM-xP-Cgz" id="7Sb-0L-yNu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tipsCollection" destination="xi8-8x-WKC" id="gtQ-rx-CJy"/>
                         <segue destination="tUV-3W-Yow" kind="presentation" identifier="logout" id="QKq-sb-RzD"/>
+                        <segue destination="iWb-tn-usx" kind="presentation" identifier="addTip" id="sMf-Wr-Qce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cse-dI-fmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5058.3999999999996" y="1424.4377811094455"/>
+        </scene>
+        <!--Post Tip-->
+        <scene sceneID="EA5-Bi-iPd">
+            <objects>
+                <viewController id="vgh-Z4-hu3" customClass="AddTipViewController" customModule="PowerNap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SeM-CP-TRO"/>
+                        <viewControllerLayoutGuide type="bottom" id="oT4-E2-xss"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bXL-cU-PW4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ztS-95-lub">
+                                <rect key="frame" x="0.0" y="64" width="375" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="QXL-OO-Z9O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29803921570000003" green="0.31372549020000001" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="ztS-95-lub" firstAttribute="top" secondItem="SeM-CP-TRO" secondAttribute="bottom" id="7Yo-ar-fum"/>
+                            <constraint firstItem="ztS-95-lub" firstAttribute="leading" secondItem="bXL-cU-PW4" secondAttribute="leading" id="NdX-pQ-r7M"/>
+                            <constraint firstAttribute="trailing" secondItem="ztS-95-lub" secondAttribute="trailing" id="tUj-3b-dqi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Post Tip" id="5r6-JA-aLT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ETF-Od-JCx">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="cancelled:" destination="vgh-Z4-hu3" id="Geu-tl-h2B"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dfQ-aa-vJn">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="addTip:" destination="vgh-Z4-hu3" id="IK3-ib-C9e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tipText" destination="ztS-95-lub" id="oq8-Mv-Adj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggm-zm-o5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7213.6000000000004" y="1022.3388305847077"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IU1-Qt-4V4">
@@ -559,9 +618,27 @@
             </objects>
             <point key="canvasLocation" x="4014" y="1425"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hmu-6g-Rec">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iWb-tn-usx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W4w-nu-nxg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vgh-Z4-hu3" kind="relationship" relationship="rootViewController" id="of2-aR-Lrq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54G-zh-pga" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6274.3999999999996" y="1022.3388305847077"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ebq-CB-FPT"/>
-        <segue reference="mkI-vK-xgc"/>
+        <segue reference="QKq-sb-RzD"/>
     </inferredMetricsTieBreakers>
 </document>

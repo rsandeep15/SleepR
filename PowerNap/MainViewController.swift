@@ -30,6 +30,12 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate{
     
     var player = AVAudioPlayer()
     
+    var trigger: UNTimeIntervalNotificationTrigger?
+    
+    var paused: Bool = false
+    
+    var started: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -74,44 +80,58 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate{
     }
     
     @IBAction func onStart(_ sender: Any) {
-        // Instantiate a timer object if one has not been created yet
-        if timer != nil {
-            // Do Nothing. Singleton Pattern.
+        // Start button becomes a resume button after start
+        if started {
+            self.setResumeButton()
+            timer?.invalidate()
+            self.timer = nil
+            started = false
         }
         else {
-            startTime = NSDate().timeIntervalSince1970
-            // Timer calls the decrement time method every second.
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementTime), userInfo: nil, repeats: true)
-            
-            // Setup notification 
-            let content = UNMutableNotificationContent()
-            content.title = "Power Nap"
-            content.body = "Rise and Shine! Your nap has ended"
-            content.sound = UNNotificationSound.default()
-            
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20*60, repeats: false)
-            
-            // Schedule the notification
-            let request = UNNotificationRequest(identifier: "alarm", content: content, trigger: trigger)
-            let center = UNUserNotificationCenter.current()
-            center.add(request, withCompletionHandler: nil)
+            // Instantiate a timer object if one has not been created yet
+            if timer != nil {
+                // Do Nothing. Singleton Pattern.
+            }
+            else {
+                startTime = NSDate().timeIntervalSince1970
+                // Timer calls the decrement time method every second.
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementTime), userInfo: nil, repeats: true)
+                
+                started = true
+                
+                setPauseButton()
+                
+                // Setup notification 
+                let content = UNMutableNotificationContent()
+                content.title = "Power Nap"
+                content.body = "Rise and Shine! Your nap has ended"
+                content.sound = UNNotificationSound.default()
+                
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timeMin*60 + timeSec), repeats: false)
+        
+                // Schedule the notification
+                let request = UNNotificationRequest(identifier: "alarm", content: content, trigger: trigger)
+                let center = UNUserNotificationCenter.current()
+                center.add(request, withCompletionHandler: { (error: Error?) in
+                    if error == nil {
+                        self.trigger = trigger
+                    }
+                })
+            }
         }
         
     }
     
+    
     func decrementTime() {
-        let currentTime = NSDate().timeIntervalSince1970
-        
-        print("Start Time: \(startTime)")
-        print("Current Time: \(currentTime)")
         // Case to count down the minute
         if (timeSec == 0) {
-            timeMin = 20 - (Int(currentTime - startTime))/60 - 1
+            timeMin = timeMin - 1
             timeSec = 59;
         }
         // Decrement the second
         else {
-            timeSec = 59 - (Int(currentTime - startTime) % 60);
+            timeSec = timeSec - 1
         }
         // When the time hits 0, play the alarm sound
         if (timeSec <= 0 && timeMin <= 0) {
@@ -138,22 +158,43 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate{
         timeLeft.text = "\(timeMin) : \(timeSec)"
     }
     
-    // Reset the time to 20 mins
-    @IBAction func onCancel(_ sender: Any) {
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        resetTimer()
-    }
-    
     func resetTimer() {
         if let timer = timer {
             timer.invalidate()
             self.timer = nil
-            // Reset timer
-            timeLeft.text = "20 : 00"
-            timeMin = 20
-            timeSec = 0
-            startTime = 0
         }
+        // Reset timer
+        timeLeft.text = "20 : 00"
+        timeMin = 20
+        timeSec = 0
+        startTime = 0
+        started = false
+        setStartButton()
+    }
+    
+    // Reset the time to 20 mins
+    @IBAction func onCancel(_ sender: Any) {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        self.resetTimer()
+    }
+    
+    func setStartButton() {
+        self.cancelButton.backgroundColor = UIColor(red: 255/255, green: 176/255, blue: 63/255, alpha: 1.0)
+        self.startButton.backgroundColor = UIColor(red: 112/255, green: 221/255, blue: 72/255, alpha: 1.0)
+        self.startButton.setTitle("Start", for: .normal)
+        self.cancelButton.setTitle("Pause", for: .normal)
+    }
+    
+    func setPauseButton() {
+        self.cancelButton.setTitle("Cancel", for: .normal)
+        self.cancelButton.backgroundColor = UIColor.orange
+        self.startButton.setTitle("Pause", for: .normal)
+        self.startButton.backgroundColor = UIColor(red: 255/255, green: 176/255, blue: 63/255, alpha: 1.0)
+    }
+    
+    func setResumeButton() {
+        self.startButton.setTitle("Resume", for: .normal)
+        self.startButton.backgroundColor = UIColor(red: 255/255, green: 176/255, blue: 63/255, alpha: 1.0)
     }
     
     func playAlarm() {
@@ -174,5 +215,4 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate{
     }
     
     
-
 }
