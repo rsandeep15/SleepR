@@ -43,8 +43,8 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func fetchTips() {
-        tips = [] 
         dbRef.child("tips").observe(.value) { (snap: FIRDataSnapshot) in
+            self.tips = []
             for tipShot in snap.children {
                 let snapshot = tipShot as! FIRDataSnapshot
                 let tipEntry = snapshot.value as! NSDictionary
