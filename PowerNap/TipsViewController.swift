@@ -105,9 +105,11 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
     // When a tip cell is tapped, open the URL from where the tip was fetched
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let tipCell = tipsCollection.cellForItem(at: indexPath) as! TipCell
-        let tipURL = URL(string: tipCell.tip.source!)
-        if UIApplication.shared.canOpenURL(tipURL!) {
-            UIApplication.shared.open(tipURL!, options: [:], completionHandler: nil)
+        let tipURL = URL(string: tipCell.tip?.source ?? "No URL")
+        if let tipURL = tipURL {
+            if UIApplication.shared.canOpenURL(tipURL) {
+                UIApplication.shared.open(tipURL, options: [:], completionHandler: nil)
+            }
         }
     }
     
