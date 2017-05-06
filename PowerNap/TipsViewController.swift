@@ -11,7 +11,7 @@ import FirebaseAuth
 import FBSDKLoginKit
 import FirebaseDatabase
 
-class TipsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class TipsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate {
 
     let auth: FIRAuth = FIRAuth.auth()!
     let dbRef = FIRDatabase.database().reference()
@@ -23,8 +23,11 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tipPanGesture = UIPanGestureRecognizer(target: self, action: #selector(tipSwiped))
         tipsCollection.dataSource = self
         tipsCollection.delegate = self
+        tipPanGesture.delegate = self
+        self.view.addGestureRecognizer(tipPanGesture)
         fetchTips()
         // Do any additional setup after loading the view.
     }
@@ -52,6 +55,7 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
                 let tip = Tip()
                 tip.textDescription = tipEntry.value(forKeyPath: "description") as? String
                 tip.source = tipEntry.value(forKey: "source") as? String
+                tip.index = snapshot.key
                 self.tips.append(tip)
                 self.tipsCollection.reloadData()
             }
@@ -111,6 +115,46 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
                 UIApplication.shared.open(tipURL, options: [:], completionHandler: nil)
             }
         }
+    }
+    
+    func tipSwiped(sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: self.tipsCollection)
+        
+        let location: CGPoint = sender.location(in: tipsCollection)
+        let swipedIndexPath = tipsCollection.indexPathForItem(at: location)
+        if let path = swipedIndexPath {
+            let cell = tipsCollection.cellForItem(at: path) as? TipCell
+            if let cell = cell {
+                var ogCenter = cell.center
+                let tipState = sender.state
+                if tipState == .began {
+                    ogCenter = cell.center
+                }
+                if tipState == .changed {
+                    if translation.x < 0 {
+                    cell.center = CGPoint(x: ogCenter.x + translation.x, y: (ogCenter.y))
+                    sender.setTranslation(CGPoint(x: 0.0, y: 0.0), in: self.view)
+                    }
+                }
+                if tipState == .ended {
+                    if cell.center.x < CGFloat(35) {
+                        cell.center.x = view.center.x
+                        tips.remove(at: path.row)
+                        tipsCollection.reloadData()
+                        DispatchQueue.global(qos: .background).async {
+                            Tip.removeTip(id: cell.tip.index!)
+                        }
+                    }
+                    else {
+                        cell.center.x = view.center.x
+                    }
+                }
+            }
+        }
+    }
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
     @IBAction func onAdd(_ sender: Any) {
