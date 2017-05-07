@@ -13,6 +13,15 @@ class Tip: NSObject {
     var textDescription: String?
     var source: String?
     static let DBRef = FIRDatabase.database().reference()
+    
+    init(idx: String, text: String, source: String?) {
+        super.init()
+        self.index = idx
+        self.textDescription = text
+        self.source = source
+    }
+    
+    
     class func addTip(tip: String, useruid: String) {
         let tipId = DBRef.child("tips").childByAutoId().key
         DBRef.child("users").child(useruid).child("Name").observeSingleEvent(of: .value) { (snap: FIRDataSnapshot) in

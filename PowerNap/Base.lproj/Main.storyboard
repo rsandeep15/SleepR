@@ -13,7 +13,7 @@
         <!--Entry View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="EntryViewController" customModule="PowerNap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EntryViewController" customModule="SleepR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -88,7 +88,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="vBg-JO-rAV">
             <objects>
-                <viewController id="tte-Ty-zps" customClass="SignUpViewController" customModule="PowerNap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tte-Ty-zps" customClass="SignUpViewController" customModule="SleepR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CCs-5h-sgJ"/>
                         <viewControllerLayoutGuide type="bottom" id="ii4-ig-VJB"/>
@@ -225,7 +225,7 @@
         <!--Login View Controller-->
         <scene sceneID="han-A6-fKF">
             <objects>
-                <viewController id="tQV-u0-cBa" customClass="LoginViewController" customModule="PowerNap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tQV-u0-cBa" customClass="LoginViewController" customModule="SleepR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IWD-vm-ZNB"/>
                         <viewControllerLayoutGuide type="bottom" id="i08-1F-ysF"/>
@@ -305,10 +305,10 @@
             </objects>
             <point key="canvasLocation" x="1999.2" y="917.09145427286364"/>
         </scene>
-        <!--Alarm-->
+        <!--Sleep Journal-->
         <scene sceneID="wrU-PX-2sA">
             <objects>
-                <viewController storyboardIdentifier="mainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kjp-ib-QVR" customClass="MainViewController" customModule="PowerNap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kjp-ib-QVR" customClass="JournalViewController" customModule="SleepR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="obx-Ub-E6q"/>
                         <viewControllerLayoutGuide type="bottom" id="msE-GZ-m1j"/>
@@ -317,69 +317,84 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 : 00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ij-sP-RdR">
-                                <rect key="frame" x="87.5" y="184" width="200" height="76"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Bp5-1X-vRk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="63"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4M-3b-TuT">
-                                <rect key="frame" x="207.5" y="290" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.4385226665941816" green="0.86472874365482233" blue="0.2827002445159606" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="6rv-Df-y00"/>
-                                    <constraint firstAttribute="width" constant="80" id="nSD-SC-N2n"/>
-                                </constraints>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onStart:" destination="kjp-ib-QVR" eventType="touchUpInside" id="cyN-kJ-HCa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFQ-cn-8At">
-                                <rect key="frame" x="87.5" y="290" width="80" height="80"/>
-                                <color key="backgroundColor" red="1" green="0.69124633973577643" blue="0.24697913345364242" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="4Np-yv-hLV"/>
-                                    <constraint firstAttribute="width" constant="80" id="mbr-8x-UDk"/>
-                                </constraints>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onCancel:" destination="kjp-ib-QVR" eventType="touchUpInside" id="GfY-2b-ucx"/>
-                                </connections>
-                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Z9-rk-y98">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.31372549020000001" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0sd-xu-idb">
+                                    <size key="itemSize" width="303" height="253"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a thought before you sleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jYy-jz-GmL">
+                                    <rect key="frame" x="0.0" y="-64" width="375" height="554"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="entryCell" id="OUJ-My-raO" customClass="EntryCell" customModule="SleepR" customModuleProvider="target">
+                                        <rect key="frame" x="36" y="0.0" width="303" height="253"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="303" height="253"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan 1, 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzT-Bm-w3C">
+                                                    <rect key="frame" x="206" y="12" width="85" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgT-Eq-1CJ">
+                                                    <rect key="frame" x="0.0" y="36" width="303" height="217"/>
+                                                    <color key="backgroundColor" red="0.97254901959999995" green="0.92549019610000005" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="tintColor" red="0.97254901959999995" green="0.92549019610000005" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.97254901960784312" green="0.92549019607843142" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="VgT-Eq-1CJ" firstAttribute="leading" secondItem="OUJ-My-raO" secondAttribute="leading" id="4vW-HB-ckV"/>
+                                            <constraint firstAttribute="trailing" secondItem="VgT-Eq-1CJ" secondAttribute="trailing" id="P9E-ut-hLQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="VgT-Eq-1CJ" secondAttribute="bottom" id="XgT-3Y-kj7"/>
+                                            <constraint firstItem="VgT-Eq-1CJ" firstAttribute="top" secondItem="kzT-Bm-w3C" secondAttribute="bottom" constant="3" id="Xj5-he-xWO"/>
+                                            <constraint firstAttribute="trailing" secondItem="kzT-Bm-w3C" secondAttribute="trailing" constant="12" id="r79-7Q-kvk"/>
+                                            <constraint firstItem="kzT-Bm-w3C" firstAttribute="top" secondItem="OUJ-My-raO" secondAttribute="top" constant="12" id="seD-oT-lHY"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="kzT-Bm-w3C" id="PVM-yv-amx"/>
+                                            <outlet property="textEntryView" destination="VgT-Eq-1CJ" id="d8x-VZ-71y"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921570000003" green="0.31372549020000001" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="8Ij-sP-RdR" firstAttribute="top" secondItem="obx-Ub-E6q" secondAttribute="bottom" constant="120" id="6S7-LR-yHP"/>
-                            <constraint firstItem="r4M-3b-TuT" firstAttribute="leading" secondItem="kFQ-cn-8At" secondAttribute="trailing" constant="40" id="8RA-95-82Y"/>
-                            <constraint firstItem="kFQ-cn-8At" firstAttribute="top" secondItem="8Ij-sP-RdR" secondAttribute="bottom" constant="30" id="H4y-Tf-Iif"/>
-                            <constraint firstItem="8Ij-sP-RdR" firstAttribute="centerX" secondItem="7E5-QL-nzl" secondAttribute="centerX" id="Oai-Wr-drx"/>
-                            <constraint firstItem="kFQ-cn-8At" firstAttribute="leading" secondItem="8Ij-sP-RdR" secondAttribute="leading" id="eJ6-vt-nxD"/>
-                            <constraint firstItem="r4M-3b-TuT" firstAttribute="top" secondItem="kFQ-cn-8At" secondAttribute="top" id="xM2-8r-tRi"/>
-                            <constraint firstItem="r4M-3b-TuT" firstAttribute="trailing" secondItem="8Ij-sP-RdR" secondAttribute="trailing" id="ydh-NX-jLB"/>
+                            <constraint firstItem="9Z9-rk-y98" firstAttribute="top" secondItem="obx-Ub-E6q" secondAttribute="bottom" id="LmM-ko-FkX"/>
+                            <constraint firstItem="msE-GZ-m1j" firstAttribute="top" secondItem="9Z9-rk-y98" secondAttribute="bottom" id="Qyl-wf-tWY"/>
+                            <constraint firstAttribute="trailing" secondItem="9Z9-rk-y98" secondAttribute="trailing" id="U2b-q3-ERx"/>
+                            <constraint firstItem="9Z9-rk-y98" firstAttribute="leading" secondItem="7E5-QL-nzl" secondAttribute="leading" id="ozc-X5-4AH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Alarm" id="HQf-Nr-SfH">
+                    <navigationItem key="navigationItem" title="Sleep Journal" id="HQf-Nr-SfH">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Plg-bl-Fvk">
                             <color key="tintColor" red="0.99167607599999996" green="0.98613664219999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="logout:" destination="kjp-ib-QVR" id="q6w-b2-zlS"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2L0-1i-NV6">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cancelButton" destination="kFQ-cn-8At" id="A8u-uu-Lgt"/>
-                        <outlet property="startButton" destination="r4M-3b-TuT" id="XKd-2m-c5j"/>
-                        <outlet property="timeLeft" destination="8Ij-sP-RdR" id="6aV-Sn-Txq"/>
+                        <outlet property="journalCollection" destination="9Z9-rk-y98" id="st7-K6-Cct"/>
+                        <outlet property="noEntriesDisplay" destination="jYy-jz-GmL" id="WHo-qd-1nk"/>
                         <segue destination="tUV-3W-Yow" kind="presentation" identifier="logout" id="mkI-vK-xgc"/>
                     </connections>
                 </viewController>
@@ -390,7 +405,7 @@
         <!--Sleep Tips-->
         <scene sceneID="yCV-5l-35i">
             <objects>
-                <viewController id="UeM-xP-Cgz" customClass="TipsViewController" customModule="PowerNap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UeM-xP-Cgz" customClass="TipsViewController" customModule="SleepR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zOd-3B-RyL"/>
                         <viewControllerLayoutGuide type="bottom" id="FXd-8p-mvM"/>
@@ -410,7 +425,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tipCell" id="T57-wv-UkW" customClass="TipCell" customModule="PowerNap" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tipCell" id="T57-wv-UkW" customClass="TipCell" customModule="SleepR" customModuleProvider="target">
                                         <rect key="frame" x="32" y="0.0" width="311" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -464,7 +479,7 @@
                                 <action selector="logout:" destination="UeM-xP-Cgz" id="DlL-gy-cya"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="egw-oM-kSY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="egw-oM-kSY">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="onAdd:" destination="UeM-xP-Cgz" id="7Sb-0L-yNu"/>
@@ -484,7 +499,7 @@
         <!--Post Tip-->
         <scene sceneID="EA5-Bi-iPd">
             <objects>
-                <viewController id="vgh-Z4-hu3" customClass="AddTipViewController" customModule="PowerNap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vgh-Z4-hu3" customClass="AddTipViewController" customModule="SleepR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SeM-CP-TRO"/>
                         <viewControllerLayoutGuide type="bottom" id="oT4-E2-xss"/>
@@ -554,11 +569,11 @@
             </objects>
             <point key="canvasLocation" x="-430" y="543"/>
         </scene>
-        <!--Alarm-->
+        <!--Journal-->
         <scene sceneID="Jmr-eu-Qci">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BeC-Sb-bXk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Alarm" id="frP-YJ-6WG"/>
+                    <tabBarItem key="tabBarItem" title="Journal" id="frP-YJ-6WG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UiT-4x-OS9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -639,7 +654,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="mkI-vK-xgc"/>
         <segue reference="ebq-CB-FPT"/>
-        <segue reference="QKq-sb-RzD"/>
     </inferredMetricsTieBreakers>
 </document>

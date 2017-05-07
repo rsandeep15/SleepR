@@ -15,14 +15,15 @@
 		2C179E181E862CE60007EE78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C179E171E862CE60007EE78 /* GoogleService-Info.plist */; };
 		2C179E1A1E862DC40007EE78 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179E191E862DC40007EE78 /* SignUpViewController.swift */; };
 		2C179E1C1E863FE50007EE78 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C179E1B1E863FE50007EE78 /* AdSupport.framework */; };
-		2C179E1E1E86455D0007EE78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179E1D1E86455D0007EE78 /* MainViewController.swift */; };
+		2C179E1E1E86455D0007EE78 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179E1D1E86455D0007EE78 /* JournalViewController.swift */; };
 		2C30E2901E8A357300B79E72 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C30E28F1E8A357300B79E72 /* FBSDKLoginKit.framework */; };
 		2C30E2921E8A36A700B79E72 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C30E2911E8A36A700B79E72 /* FBSDKCoreKit.framework */; };
 		2C30E2941E8A374A00B79E72 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C30E2931E8A374A00B79E72 /* Bolts.framework */; };
 		2C30E2961E8A384A00B79E72 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30E2951E8A384A00B79E72 /* EntryViewController.swift */; };
 		2C30E2991E8A3C5600B79E72 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30E2981E8A3C5600B79E72 /* User.swift */; };
+		2C4955AF1EBF06EE00C122C1 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4955AE1EBF06EE00C122C1 /* JournalEntry.swift */; };
+		2C4955B21EBF07D300C122C1 /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4955B11EBF07D300C122C1 /* EntryCell.swift */; };
 		2C5B57F41EBD4EAC008404FF /* AddTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B57F31EBD4EAC008404FF /* AddTipViewController.swift */; };
-		2CAA5D591E908AA200585EFE /* PowerNapAlarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CAA5D581E908AA200585EFE /* PowerNapAlarm.mp3 */; };
 		2CD6C9401E8B7415004F65BC /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */; };
 		2CD6C9421E8B7934004F65BC /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C9411E8B7934004F65BC /* Tip.swift */; };
 		2CD6C9441E8B7FA6004F65BC /* TipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C9431E8B7FA6004F65BC /* TipCell.swift */; };
@@ -30,7 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C179E021E8629130007EE78 /* PowerNap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerNap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C179E021E8629130007EE78 /* SleepR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C179E051E8629130007EE78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C179E071E8629130007EE78 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2C179E0A1E8629130007EE78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,14 +41,15 @@
 		2C179E171E862CE60007EE78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C179E191E862DC40007EE78 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2C179E1B1E863FE50007EE78 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		2C179E1D1E86455D0007EE78 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2C179E1D1E86455D0007EE78 /* JournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
 		2C30E28F1E8A357300B79E72 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		2C30E2911E8A36A700B79E72 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		2C30E2931E8A374A00B79E72 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		2C30E2951E8A384A00B79E72 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		2C30E2981E8A3C5600B79E72 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2C4955AE1EBF06EE00C122C1 /* JournalEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		2C4955B11EBF07D300C122C1 /* EntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
 		2C5B57F31EBD4EAC008404FF /* AddTipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTipViewController.swift; sourceTree = "<group>"; };
-		2CAA5D581E908AA200585EFE /* PowerNapAlarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = PowerNapAlarm.mp3; path = PowerNap/PowerNapAlarm.mp3; sourceTree = "<group>"; };
 		2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		2CD6C9411E8B7934004F65BC /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		2CD6C9431E8B7FA6004F65BC /* TipCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCell.swift; sourceTree = "<group>"; };
@@ -87,7 +89,6 @@
 		2C179DF91E8629120007EE78 = {
 			isa = PBXGroup;
 			children = (
-				2CAA5D581E908AA200585EFE /* PowerNapAlarm.mp3 */,
 				2C179E041E8629130007EE78 /* PowerNap */,
 				2C179E031E8629130007EE78 /* Products */,
 				895F9F41FBFC4CCC0D3ADEBA /* Pods */,
@@ -98,7 +99,7 @@
 		2C179E031E8629130007EE78 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2C179E021E8629130007EE78 /* PowerNap.app */,
+				2C179E021E8629130007EE78 /* SleepR.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +107,7 @@
 		2C179E041E8629130007EE78 /* PowerNap */ = {
 			isa = PBXGroup;
 			children = (
+				2C4955B01EBF07AD00C122C1 /* Cells */,
 				2CD6C93C1E8B73A0004F65BC /* ViewControllers */,
 				2C30E2971E8A3C2D00B79E72 /* Model */,
 				2C179E051E8629130007EE78 /* AppDelegate.swift */,
@@ -123,17 +125,26 @@
 			children = (
 				2C30E2981E8A3C5600B79E72 /* User.swift */,
 				2CD6C9411E8B7934004F65BC /* Tip.swift */,
+				2C4955AE1EBF06EE00C122C1 /* JournalEntry.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		2C4955B01EBF07AD00C122C1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2CD6C9431E8B7FA6004F65BC /* TipCell.swift */,
+				2C4955B11EBF07D300C122C1 /* EntryCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		2CD6C93C1E8B73A0004F65BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2CD6C9431E8B7FA6004F65BC /* TipCell.swift */,
 				2C179E191E862DC40007EE78 /* SignUpViewController.swift */,
 				2C179E071E8629130007EE78 /* LoginViewController.swift */,
-				2C179E1D1E86455D0007EE78 /* MainViewController.swift */,
+				2C179E1D1E86455D0007EE78 /* JournalViewController.swift */,
 				2C30E2951E8A384A00B79E72 /* EntryViewController.swift */,
 				2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */,
 				2C5B57F31EBD4EAC008404FF /* AddTipViewController.swift */,
@@ -153,9 +164,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2C179E011E8629120007EE78 /* PowerNap */ = {
+		2C179E011E8629120007EE78 /* SleepR */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C179E141E8629130007EE78 /* Build configuration list for PBXNativeTarget "PowerNap" */;
+			buildConfigurationList = 2C179E141E8629130007EE78 /* Build configuration list for PBXNativeTarget "SleepR" */;
 			buildPhases = (
 				7AD9A794B8050ACFF66B2E23 /* [CP] Check Pods Manifest.lock */,
 				2C179DFE1E8629120007EE78 /* Sources */,
@@ -168,9 +179,9 @@
 			);
 			dependencies = (
 			);
-			name = PowerNap;
+			name = SleepR;
 			productName = PowerNap;
-			productReference = 2C179E021E8629130007EE78 /* PowerNap.app */;
+			productReference = 2C179E021E8629130007EE78 /* SleepR.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -195,7 +206,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2C179DFD1E8629120007EE78 /* Build configuration list for PBXProject "PowerNap" */;
+			buildConfigurationList = 2C179DFD1E8629120007EE78 /* Build configuration list for PBXProject "SleepR" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -208,7 +219,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2C179E011E8629120007EE78 /* PowerNap */,
+				2C179E011E8629120007EE78 /* SleepR */,
 			);
 		};
 /* End PBXProject section */
@@ -221,7 +232,6 @@
 				2C179E101E8629130007EE78 /* LaunchScreen.storyboard in Resources */,
 				2C179E181E862CE60007EE78 /* GoogleService-Info.plist in Resources */,
 				2C179E0D1E8629130007EE78 /* Assets.xcassets in Resources */,
-				2CAA5D591E908AA200585EFE /* PowerNapAlarm.mp3 in Resources */,
 				2C179E0B1E8629130007EE78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,12 +295,14 @@
 				2CD6C9421E8B7934004F65BC /* Tip.swift in Sources */,
 				2C5B57F41EBD4EAC008404FF /* AddTipViewController.swift in Sources */,
 				2C30E2961E8A384A00B79E72 /* EntryViewController.swift in Sources */,
+				2C4955B21EBF07D300C122C1 /* EntryCell.swift in Sources */,
+				2C4955AF1EBF06EE00C122C1 /* JournalEntry.swift in Sources */,
 				2CD6C9441E8B7FA6004F65BC /* TipCell.swift in Sources */,
 				2CD6C9401E8B7415004F65BC /* TipsViewController.swift in Sources */,
 				2C30E2991E8A3C5600B79E72 /* User.swift in Sources */,
 				2C179E081E8629130007EE78 /* LoginViewController.swift in Sources */,
 				2C179E061E8629130007EE78 /* AppDelegate.swift in Sources */,
-				2C179E1E1E86455D0007EE78 /* MainViewController.swift in Sources */,
+				2C179E1E1E86455D0007EE78 /* JournalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +460,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2C179DFD1E8629120007EE78 /* Build configuration list for PBXProject "PowerNap" */ = {
+		2C179DFD1E8629120007EE78 /* Build configuration list for PBXProject "SleepR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C179E121E8629130007EE78 /* Debug */,
@@ -457,7 +469,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C179E141E8629130007EE78 /* Build configuration list for PBXNativeTarget "PowerNap" */ = {
+		2C179E141E8629130007EE78 /* Build configuration list for PBXNativeTarget "SleepR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C179E151E8629130007EE78 /* Debug */,

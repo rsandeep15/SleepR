@@ -53,10 +53,7 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
                     let snapshot = tipShot as! FIRDataSnapshot
                     let tipEntry = snapshot.value as! NSDictionary
                     
-                    let tip = Tip()
-                    tip.textDescription = tipEntry.value(forKeyPath: "description") as? String
-                    tip.source = tipEntry.value(forKey: "source") as? String
-                    tip.index = snapshot.key
+                    let tip = Tip(idx: snapshot.key, text: (tipEntry.value(forKeyPath: "description") as? String)!, source: tipEntry.value(forKey: "source") as? String)
                     self.tips.append(tip)
                     self.tipsCollection.reloadData()
                 }
