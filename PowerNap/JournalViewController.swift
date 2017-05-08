@@ -11,20 +11,23 @@ import FirebaseAuth
 import FBSDKLoginKit
 import AVFoundation
 import UserNotifications
+import FirebaseDatabase
 
 class JournalViewController: UIViewController
 , UICollectionViewDataSource, UICollectionViewDelegate{
     
     @IBOutlet weak var noEntriesDisplay: UILabel!
     @IBOutlet weak var journalCollection: UICollectionView!
+    var currentUserUid: String = (FIRAuth.auth()?.currentUser?.uid)!
     var journalEntries:[JournalEntry]?
+    var dbRef = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         journalCollection.delegate = self
         journalCollection.dataSource = self
-        
+        fetchEntries()
         // Do any additional setup after loading the view.
         // format the button
     }
@@ -35,7 +38,21 @@ class JournalViewController: UIViewController
     }
     
     func fetchEntries() {
-        
+        dbRef.child("users").child(currentUserUid).child("journal").queryOrdered(byChild: "date").observe(.value) { (snap: FIRDataSnapshot) in
+                self.journalEntries = []
+                for snap in snap.children {
+                    let snapshot = snap as! FIRDataSnapshot
+                    let journalEntry = snapshot.value as! NSDictionary
+                    let entryText = journalEntry.value(forKey: "text") as! String
+                    let dateString = journalEntry.value(forKey: "date") as! String
+                    let dateInterval = Double(dateString)
+                    let entry = JournalEntry(text: entryText, date: Date(timeIntervalSince1970: dateInterval!))
+                    self.journalEntries?.append(entry)
+                    print(entryText)
+                }
+                self.journalEntries = self.journalEntries?.reversed()
+                self.journalCollection.reloadData()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -54,6 +71,10 @@ class JournalViewController: UIViewController
         cell?.entry = journalEntries?[indexPath.row]
         
         return cell!
+    }
+    @IBAction func onAddEntry(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "addEntry", sender: nil)
     }
     
 }

@@ -23,6 +23,7 @@
 		2C30E2991E8A3C5600B79E72 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30E2981E8A3C5600B79E72 /* User.swift */; };
 		2C4955AF1EBF06EE00C122C1 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4955AE1EBF06EE00C122C1 /* JournalEntry.swift */; };
 		2C4955B21EBF07D300C122C1 /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4955B11EBF07D300C122C1 /* EntryCell.swift */; };
+		2C4955B41EBF203C00C122C1 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4955B31EBF203C00C122C1 /* AddEntryViewController.swift */; };
 		2C5B57F41EBD4EAC008404FF /* AddTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B57F31EBD4EAC008404FF /* AddTipViewController.swift */; };
 		2CD6C9401E8B7415004F65BC /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */; };
 		2CD6C9421E8B7934004F65BC /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C9411E8B7934004F65BC /* Tip.swift */; };
@@ -49,6 +50,7 @@
 		2C30E2981E8A3C5600B79E72 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2C4955AE1EBF06EE00C122C1 /* JournalEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		2C4955B11EBF07D300C122C1 /* EntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
+		2C4955B31EBF203C00C122C1 /* AddEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
 		2C5B57F31EBD4EAC008404FF /* AddTipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTipViewController.swift; sourceTree = "<group>"; };
 		2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		2CD6C9411E8B7934004F65BC /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				2C30E2951E8A384A00B79E72 /* EntryViewController.swift */,
 				2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */,
 				2C5B57F31EBD4EAC008404FF /* AddTipViewController.swift */,
+				2C4955B31EBF203C00C122C1 /* AddEntryViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				2CD6C9401E8B7415004F65BC /* TipsViewController.swift in Sources */,
 				2C30E2991E8A3C5600B79E72 /* User.swift in Sources */,
 				2C179E081E8629130007EE78 /* LoginViewController.swift in Sources */,
+				2C4955B41EBF203C00C122C1 /* AddEntryViewController.swift in Sources */,
 				2C179E061E8629130007EE78 /* AppDelegate.swift in Sources */,
 				2C179E1E1E86455D0007EE78 /* JournalViewController.swift in Sources */,
 			);
