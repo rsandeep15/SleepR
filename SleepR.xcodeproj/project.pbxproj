@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		2C179E061E8629130007EE78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179E051E8629130007EE78 /* AppDelegate.swift */; };
 		2C179E081E8629130007EE78 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179E071E8629130007EE78 /* LoginViewController.swift */; };
-		2C179E0B1E8629130007EE78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C179E091E8629130007EE78 /* Main.storyboard */; };
-		2C179E0D1E8629130007EE78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C179E0C1E8629130007EE78 /* Assets.xcassets */; };
-		2C179E101E8629130007EE78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C179E0E1E8629130007EE78 /* LaunchScreen.storyboard */; };
-		2C179E181E862CE60007EE78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C179E171E862CE60007EE78 /* GoogleService-Info.plist */; };
 		2C179E1A1E862DC40007EE78 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179E191E862DC40007EE78 /* SignUpViewController.swift */; };
 		2C179E1C1E863FE50007EE78 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C179E1B1E863FE50007EE78 /* AdSupport.framework */; };
 		2C179E1E1E86455D0007EE78 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179E1D1E86455D0007EE78 /* JournalViewController.swift */; };
@@ -25,6 +21,10 @@
 		2C4955B21EBF07D300C122C1 /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4955B11EBF07D300C122C1 /* EntryCell.swift */; };
 		2C4955B41EBF203C00C122C1 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4955B31EBF203C00C122C1 /* AddEntryViewController.swift */; };
 		2C5B57F41EBD4EAC008404FF /* AddTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B57F31EBD4EAC008404FF /* AddTipViewController.swift */; };
+		2C6DAF041EC104E7000D5B08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C179E0E1E8629130007EE78 /* LaunchScreen.storyboard */; };
+		2C6DAF051EC104ED000D5B08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C179E091E8629130007EE78 /* Main.storyboard */; };
+		2C6DAF061EC104F2000D5B08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C179E171E862CE60007EE78 /* GoogleService-Info.plist */; };
+		2C6DAF071EC104F9000D5B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C179E0C1E8629130007EE78 /* Assets.xcassets */; };
 		2CD6C9401E8B7415004F65BC /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */; };
 		2CD6C9421E8B7934004F65BC /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C9411E8B7934004F65BC /* Tip.swift */; };
 		2CD6C9441E8B7FA6004F65BC /* TipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C9431E8B7FA6004F65BC /* TipCell.swift */; };
@@ -233,10 +233,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C179E101E8629130007EE78 /* LaunchScreen.storyboard in Resources */,
-				2C179E181E862CE60007EE78 /* GoogleService-Info.plist in Resources */,
-				2C179E0D1E8629130007EE78 /* Assets.xcassets in Resources */,
-				2C179E0B1E8629130007EE78 /* Main.storyboard in Resources */,
+				2C6DAF071EC104F9000D5B08 /* Assets.xcassets in Resources */,
+				2C6DAF061EC104F2000D5B08 /* GoogleService-Info.plist in Resources */,
+				2C6DAF051EC104ED000D5B08 /* Main.storyboard in Resources */,
+				2C6DAF041EC104E7000D5B08 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
