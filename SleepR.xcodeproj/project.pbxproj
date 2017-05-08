@@ -91,7 +91,7 @@
 		2C179DF91E8629120007EE78 = {
 			isa = PBXGroup;
 			children = (
-				2C179E041E8629130007EE78 /* PowerNap */,
+				2C179E041E8629130007EE78 /* SleepR */,
 				2C179E031E8629130007EE78 /* Products */,
 				895F9F41FBFC4CCC0D3ADEBA /* Pods */,
 				2B8C930FF961ACE611951CFA /* Frameworks */,
@@ -106,7 +106,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2C179E041E8629130007EE78 /* PowerNap */ = {
+		2C179E041E8629130007EE78 /* SleepR */ = {
 			isa = PBXGroup;
 			children = (
 				2C4955B01EBF07AD00C122C1 /* Cells */,
@@ -119,7 +119,6 @@
 				2C179E111E8629130007EE78 /* Info.plist */,
 				2C179E171E862CE60007EE78 /* GoogleService-Info.plist */,
 			);
-			name = PowerNap;
 			path = SleepR;
 			sourceTree = "<group>";
 		};
