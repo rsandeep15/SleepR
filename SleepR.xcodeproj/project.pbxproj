@@ -119,7 +119,8 @@
 				2C179E111E8629130007EE78 /* Info.plist */,
 				2C179E171E862CE60007EE78 /* GoogleService-Info.plist */,
 			);
-			path = PowerNap;
+			name = PowerNap;
+			path = SleepR;
 			sourceTree = "<group>";
 		};
 		2C30E2971E8A3C2D00B79E72 /* Model */ = {
@@ -433,7 +434,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = PowerNap/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SleepR/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sandeep.PowerNap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -452,7 +453,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = PowerNap/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SleepR/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sandeep.PowerNap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
