@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/sandeep/iOSProjects/PowerNap/SleepR.xcodeproj">
+      location = "group:SleepR.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
