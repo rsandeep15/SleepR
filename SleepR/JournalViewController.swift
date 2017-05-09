@@ -21,6 +21,7 @@ class JournalViewController: UIViewController
     var currentUserUid: String = (FIRAuth.auth()?.currentUser?.uid)!
     var journalEntries:[JournalEntry]?
     var dbRef = FIRDatabase.database().reference()
+    var auth = FIRAuth.auth()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,24 @@ class JournalViewController: UIViewController
     @IBAction func onAddEntry(_ sender: Any) {
         
         self.performSegue(withIdentifier: "addEntry", sender: nil)
+    }
+    @IBAction func onLogout(_ sender: Any) {
+        do {
+            // logout a facebook user
+            if (FBSDKAccessToken.current() != nil) {
+                FBSDKAccessToken.setCurrent(nil)
+            }
+            
+            // logout the firebase user
+            try auth?.signOut()
+            self.performSegue(withIdentifier: "logout", sender: nil)
+        }
+        catch FIRAuthErrorCode.errorCodeKeychainError {
+            print("Key chain error")
+        }
+        catch let error {
+            print(error.localizedDescription)
+        }
     }
     
 }

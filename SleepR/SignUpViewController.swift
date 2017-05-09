@@ -31,6 +31,8 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        self.navigationItem.title = "Sign Up"
         
         initializeAges()
         agePicker.delegate = self

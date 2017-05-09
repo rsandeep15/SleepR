@@ -25,6 +25,7 @@
 		2C6DAF051EC104ED000D5B08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C179E091E8629130007EE78 /* Main.storyboard */; };
 		2C6DAF061EC104F2000D5B08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C179E171E862CE60007EE78 /* GoogleService-Info.plist */; };
 		2C6DAF071EC104F9000D5B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C179E0C1E8629130007EE78 /* Assets.xcassets */; };
+		2C952B041EC196CA00297DF3 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C952B031EC196CA00297DF3 /* ForgotPassViewController.swift */; };
 		2CD6C9401E8B7415004F65BC /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */; };
 		2CD6C9421E8B7934004F65BC /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C9411E8B7934004F65BC /* Tip.swift */; };
 		2CD6C9441E8B7FA6004F65BC /* TipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6C9431E8B7FA6004F65BC /* TipCell.swift */; };
@@ -52,6 +53,7 @@
 		2C4955B11EBF07D300C122C1 /* EntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
 		2C4955B31EBF203C00C122C1 /* AddEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
 		2C5B57F31EBD4EAC008404FF /* AddTipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTipViewController.swift; sourceTree = "<group>"; };
+		2C952B031EC196CA00297DF3 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		2CD6C9411E8B7934004F65BC /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		2CD6C9431E8B7FA6004F65BC /* TipCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				2CD6C93F1E8B7415004F65BC /* TipsViewController.swift */,
 				2C5B57F31EBD4EAC008404FF /* AddTipViewController.swift */,
 				2C4955B31EBF203C00C122C1 /* AddEntryViewController.swift */,
+				2C952B031EC196CA00297DF3 /* ForgotPassViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			files = (
 				2C179E1A1E862DC40007EE78 /* SignUpViewController.swift in Sources */,
 				2CD6C9421E8B7934004F65BC /* Tip.swift in Sources */,
+				2C952B041EC196CA00297DF3 /* ForgotPassViewController.swift in Sources */,
 				2C5B57F41EBD4EAC008404FF /* AddTipViewController.swift in Sources */,
 				2C30E2961E8A384A00B79E72 /* EntryViewController.swift in Sources */,
 				2C4955B21EBF07D300C122C1 /* EntryCell.swift in Sources */,

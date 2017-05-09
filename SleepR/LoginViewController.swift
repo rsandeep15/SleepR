@@ -22,7 +22,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        self.navigationItem.title = "Login"
         loginButton.layer.cornerRadius = 5
     }
 
@@ -54,7 +55,7 @@ class LoginViewController: UIViewController {
     
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if (validateForm()) {
+        if (identifier == "loginSegue" && validateForm()) {
             if ((auth.currentUser) != nil) {
                 return true;
             }
@@ -62,6 +63,10 @@ class LoginViewController: UIViewController {
         return false;
     }
 
+    @IBAction func onForgotPassword(_ sender: Any) {
+        self.performSegue(withIdentifier: "forgotPass", sender: nil)
+        
+    }
 
 }
 
