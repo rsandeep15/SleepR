@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 class User: NSObject {
     static let dbRef = FIRDatabase.database().reference()
-    class func addUser(useruid: String, name: String, email: String, age: String) {
+    class func addUser(useruid: String, name: String, email: String) {
         
         
         dbRef.child("users").child(useruid).observeSingleEvent(of: .value) { (snap: FIRDataSnapshot) in
@@ -20,7 +20,7 @@ class User: NSObject {
             }
             else {
                 // Add the user to the database of user with age, email, firstname, lastname
-                dbRef.child("users").child(useruid).setValue(["Name": name, "email": email, "age": age])
+                dbRef.child("users").child(useruid).setValue(["Name": name, "email": email])
             }
         }
     }

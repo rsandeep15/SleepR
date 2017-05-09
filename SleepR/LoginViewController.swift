@@ -21,10 +21,25 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginButton.layer.cornerRadius = 5
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         self.navigationItem.title = "Login"
-        loginButton.layer.cornerRadius = 5
+        let Line = CALayer()
+        Line.frame = CGRect(x: 0.0, y: email.frame.height - 1, width: email.frame.width, height: 1.0)
+        Line.backgroundColor = UIColor.white.cgColor
+        
+        let Line1 = CALayer()
+        Line1.frame = CGRect(x: 0.0, y: email.frame.height - 1, width: email.frame.width, height: 1.0)
+        Line1.backgroundColor = UIColor.white.cgColor
+        email.layer.addSublayer(Line)
+        password.layer.addSublayer(Line1)
+        
+        let colorAttribute = [NSForegroundColorAttributeName : UIColor.init(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 0.7)]
+        
+        email.attributedPlaceholder = NSAttributedString(string: "Email Address", attributes: colorAttribute)
+        password.attributedPlaceholder = NSAttributedString(string: "Password", attributes: colorAttribute)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,9 +62,13 @@ class LoginViewController: UIViewController {
                     self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 }
                 if (error != nil) {
+                    self.view.endEditing(true)
                     self.errorMessage.text = "Invalid Password or User Does Not Exist"
                 }
             })
+        }
+        else {
+            self.view.endEditing(true)
         }
     }
     

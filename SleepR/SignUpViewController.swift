@@ -10,10 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
-    
-    @IBOutlet weak var agePicker: UIPickerView!
+class SignUpViewController: UIViewController {
   
     @IBOutlet weak var nameText: UITextField!
     
@@ -34,15 +31,33 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         self.navigationItem.title = "Sign Up"
         
-        initializeAges()
-        agePicker.delegate = self
-        agePicker.dataSource = self
-        agePicker.reloadAllComponents()
-        agePicker.selectRow(17, inComponent: 0, animated: false)
-        
         // Do any additional setup after loading the view.
-        agePicker.layer.cornerRadius = 5
         signUpButton.layer.cornerRadius = 5
+        
+        let emailLine = CALayer()
+        emailLine.frame = CGRect(x: 0.0, y: email.frame.height - 1, width: email.frame.width, height: 1.0)
+        emailLine.backgroundColor = UIColor.white.cgColor
+        
+        let passLine = CALayer()
+        passLine.frame = CGRect(x: 0.0, y: password.frame.height - 1, width: password.frame.width, height: 1.0)
+        passLine.backgroundColor = UIColor.white.cgColor
+        
+        let nameLine = CALayer()
+        nameLine.frame = CGRect(x: 0.0, y: nameText.frame.height - 1, width: nameText.frame.width, height: 1.0)
+        nameLine.backgroundColor = UIColor.white.cgColor
+        
+        
+        email.layer.addSublayer(emailLine)
+        password.layer.addSublayer(passLine)
+        nameText.layer.addSublayer(nameLine)
+        
+        
+        let colorAttribute = [NSForegroundColorAttributeName : UIColor.init(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 0.7)]
+        
+        email.attributedPlaceholder = NSAttributedString(string: "Email Address", attributes:colorAttribute)
+        password.attributedPlaceholder = NSAttributedString(string: "Password", attributes:colorAttribute)
+        nameText.attributedPlaceholder = NSAttributedString(string: "Name", attributes: colorAttribute)
+        
         
     }
     
@@ -89,39 +104,22 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                     
                     let emailText: String = self.email.text ?? "testuser@email.com"
                     // Get the selected age from the UIPickerView
-                    let age = self.ages[self.agePicker.selectedRow(inComponent: 0)]
                     
-                    User.addUser(useruid: user.uid, name: firstNameText, email: emailText, age: age)
+                    User.addUser(useruid: user.uid, name: firstNameText, email: emailText)
                     
                     self.performSegue(withIdentifier: "signUpSegue", sender: self)
                 }
                 if let error = error {
+                    self.view.endEditing(true)
                     self.errorMessage.text = error.localizedDescription
                 }
             })
         }
+        else {
+            self.view.endEditing(true)
+        }
         
     }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return ages[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return ages.count
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -78,9 +78,8 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         let firstName = profile.firstName!
         let email = user.email!
-        let age = ""
         
-        User.addUser(useruid: userUid, name: firstName, email: email, age: age)
+        User.addUser(useruid: userUid, name: firstName, email: email)
         self.performSegue(withIdentifier: "fbLogin", sender: self)
     }
 
