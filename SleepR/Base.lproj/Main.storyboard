@@ -529,11 +529,10 @@
                                     <constraint firstItem="uF4-zK-Ub4" firstAttribute="top" secondItem="kS6-6Q-oCA" secondAttribute="top" constant="8" id="zNg-NM-lGH"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NN-0p-4bZ">
-                                <rect key="frame" x="16" y="417" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NN-0p-4bZ">
+                                <rect key="frame" x="160" y="414" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -541,7 +540,9 @@
                         <constraints>
                             <constraint firstItem="kS6-6Q-oCA" firstAttribute="top" secondItem="tZj-Gy-EXX" secondAttribute="bottom" id="0n1-Xt-2X8"/>
                             <constraint firstItem="kS6-6Q-oCA" firstAttribute="leading" secondItem="TwO-EP-yZm" secondAttribute="leading" id="3Cq-ZK-8cY"/>
+                            <constraint firstItem="7NN-0p-4bZ" firstAttribute="top" secondItem="kS6-6Q-oCA" secondAttribute="bottom" constant="50" id="JXG-5I-VyQ"/>
                             <constraint firstAttribute="trailing" secondItem="kS6-6Q-oCA" secondAttribute="trailing" id="VgQ-r7-UBY"/>
+                            <constraint firstItem="7NN-0p-4bZ" firstAttribute="centerX" secondItem="TwO-EP-yZm" secondAttribute="centerX" id="hyI-7r-bgG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Write in Journal" id="6ar-eW-1Qp">
@@ -682,12 +683,20 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FP-gd-WTS">
+                                <rect key="frame" x="160" y="344" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921570000003" green="0.31372549020000001" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ztS-95-lub" firstAttribute="top" secondItem="SeM-CP-TRO" secondAttribute="bottom" id="7Yo-ar-fum"/>
                             <constraint firstItem="ztS-95-lub" firstAttribute="leading" secondItem="bXL-cU-PW4" secondAttribute="leading" id="NdX-pQ-r7M"/>
+                            <constraint firstItem="2FP-gd-WTS" firstAttribute="centerX" secondItem="bXL-cU-PW4" secondAttribute="centerX" id="TUF-Xr-fzz"/>
                             <constraint firstAttribute="trailing" secondItem="ztS-95-lub" secondAttribute="trailing" id="tUj-3b-dqi"/>
+                            <constraint firstItem="2FP-gd-WTS" firstAttribute="top" secondItem="ztS-95-lub" secondAttribute="bottom" constant="30" id="wdy-h0-nqj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post Tip" id="5r6-JA-aLT">
@@ -705,6 +714,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="errorMessage" destination="2FP-gd-WTS" id="WsT-FP-j3F"/>
                         <outlet property="tipText" destination="ztS-95-lub" id="oq8-Mv-Adj"/>
                     </connections>
                 </viewController>

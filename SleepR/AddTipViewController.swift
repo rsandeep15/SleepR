@@ -11,6 +11,7 @@ import FirebaseAuth
 
 class AddTipViewController: UIViewController {
     @IBOutlet weak var tipText: UITextView!
+    @IBOutlet weak var errorMessage: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +30,17 @@ class AddTipViewController: UIViewController {
         })
     }
     @IBAction func addTip(_ sender: Any) {
+        if let text = self.tipText.text {
+            if text != "" {
+                Tip.addTip(tip: text, useruid: (FIRAuth.auth()?.currentUser?.uid)!)
+                self.presentingViewController?.dismiss(animated: true, completion: nil)
+            }
+            else {
+                self.view.endEditing(true)
+                self.errorMessage.text = "Enter a valid tip"
+            }
+        }
         
-        self.presentingViewController?.dismiss(animated: true, completion: {
-            Tip.addTip(tip: self.tipText.text, useruid: (FIRAuth.auth()?.currentUser?.uid)!)
-        })
     }
 
     /*

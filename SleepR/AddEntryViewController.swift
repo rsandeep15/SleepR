@@ -32,6 +32,7 @@ class AddEntryViewController: UIViewController {
         let entry = JournalEntry(text: textEntered.text , date: Date())
         
         if entry.entryText == "" {
+            self.view.endEditing(true)
             errorMessage.text = "Write something down before you sleep"
         }
         else {

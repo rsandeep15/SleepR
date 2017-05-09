@@ -136,7 +136,7 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
                     }
                 }
                 if tipState == .ended {
-                    if cell.center.x < CGFloat(35) {
+                    if cell.center.x < CGFloat(45) {
                         cell.center.x = view.center.x
                         tips.remove(at: path.row)
                         tipsCollection.reloadData()
