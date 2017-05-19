@@ -26,7 +26,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Sleepr">
                                         <attributes>
-                                            <color key="NSColor" red="1" green="0.78011933659999999" blue="0.42556445069999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="NSColor" red="1" green="0.75491859875277789" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <font key="NSFont" size="48" name="GillSans-SemiBold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>

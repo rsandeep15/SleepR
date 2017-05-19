@@ -62,13 +62,23 @@
                                     <constraint firstAttribute="height" constant="80" id="EMb-Nd-BBD"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleepr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmF-FA-jCV">
+                                <rect key="frame" x="99" y="295" width="177" height="77.5"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.6588235294" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921568627451" green="0.31372549019607843" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="MWR-4M-Q0N" secondAttribute="bottom" id="7eI-Uz-3RP"/>
                             <constraint firstAttribute="trailing" secondItem="MWR-4M-Q0N" secondAttribute="trailing" id="Ox5-Ti-v3z"/>
                             <constraint firstItem="MWR-4M-Q0N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SVr-iH-ffy"/>
+                            <constraint firstItem="zmF-FA-jCV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="abh-b7-XeV"/>
                             <constraint firstItem="MWR-4M-Q0N" firstAttribute="top" secondItem="JKS-mF-jNC" secondAttribute="bottom" constant="45" id="ipQ-DR-x18"/>
+                            <constraint firstItem="zmF-FA-jCV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m6x-mX-QSV"/>
                             <constraint firstItem="JKS-mF-jNC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y14-7m-yx8"/>
                         </constraints>
                     </view>
@@ -314,9 +324,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCx-SM-6cX">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCx-SM-6cX">
                                 <rect key="frame" x="63.5" y="313.5" width="248" height="40"/>
-                                <color key="backgroundColor" red="0.52439861310000002" green="0.5354373563" blue="1" alpha="0.82804473460000005" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="248" id="Ng5-B0-3GJ"/>
@@ -538,6 +547,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="9Ef-ub-AQE">
+                            <color key="tintColor" red="0.95686274510000002" green="0.6588235294" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onDone:" destination="r2b-Mx-0P9" id="6Ob-GG-OBC"/>
                             </connections>
@@ -687,13 +697,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Post Tip" id="5r6-JA-aLT">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ETF-Od-JCx">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelled:" destination="vgh-Z4-hu3" id="Geu-tl-h2B"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="dfQ-aa-vJn">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.95686274510000002" green="0.6588235294" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="addTip:" destination="vgh-Z4-hu3" id="IK3-ib-C9e"/>
                             </connections>
@@ -729,11 +739,11 @@
             </objects>
             <point key="canvasLocation" x="-430" y="543"/>
         </scene>
-        <!--Journal-->
+        <!--Sleep Journal-->
         <scene sceneID="Jmr-eu-Qci">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BeC-Sb-bXk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Journal" id="frP-YJ-6WG"/>
+                    <tabBarItem key="tabBarItem" title="Sleep Journal" image="Journal" id="frP-YJ-6WG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UiT-4x-OS9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -775,7 +785,7 @@
         <scene sceneID="0Zg-PO-GFE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bx8-XJ-Fhv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tips" id="X34-kb-bGc"/>
+                    <tabBarItem key="tabBarItem" title="Tips" image="Tip" id="X34-kb-bGc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DcC-B0-PQC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -831,8 +841,12 @@
             <point key="canvasLocation" x="6020" y="556.37181409295351"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Journal" width="25" height="25"/>
+        <image name="Tip" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wys-Bc-3jV"/>
-        <segue reference="mkI-vK-xgc"/>
+        <segue reference="ebq-CB-FPT"/>
+        <segue reference="QKq-sb-RzD"/>
     </inferredMetricsTieBreakers>
 </document>

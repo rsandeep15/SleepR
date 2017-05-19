@@ -23,6 +23,15 @@ class ForgotPassViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         self.navigationItem.title = "Forgot Password"
         // Do any additional setup after loading the view.
+        
+        let colorAttribute = [NSForegroundColorAttributeName : UIColor.init(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 0.7)]
+        
+        let Line1 = CALayer()
+        Line1.frame = CGRect(x: 0.0, y: firebaseEmail.frame.height - 1, width: firebaseEmail.frame.width, height: 1.0)
+        Line1.backgroundColor = UIColor.white.cgColor
+        firebaseEmail.layer.addSublayer(Line1)
+        
+        firebaseEmail.attributedPlaceholder = NSAttributedString(string: "Email Address", attributes: colorAttribute)
     }
 
     override func didReceiveMemoryWarning() {
