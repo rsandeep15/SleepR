@@ -37,6 +37,17 @@ class JournalViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func deleteEntry(_ sender: UITapGestureRecognizer) {
+        
+        let location: CGPoint = sender.location(in: journalCollection)
+        let tappedIndexPath = journalCollection.indexPathForItem(at: location)
+        let entry = journalEntries?[(tappedIndexPath?.row)!]
+        journalEntries?.remove(at: (tappedIndexPath?.row)!)
+        JournalEntry.deleteEntry(entry: entry!)
+        journalCollection.reloadData()
+        
+    }
+    
     
     func fetchEntries() {
         dbRef.child("users").child(currentUserUid).child("journal").queryOrdered(byChild: "date").observe(.value) { (snap: FIRDataSnapshot) in

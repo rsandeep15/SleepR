@@ -82,6 +82,12 @@ class LoginViewController: UIViewController {
         return false;
     }
 
+    
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        self.view.endEditing(true)
+    }
+    
+    
     @IBAction func onForgotPassword(_ sender: Any) {
         self.performSegue(withIdentifier: "forgotPass", sender: nil)
         

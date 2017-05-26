@@ -13,9 +13,11 @@ class JournalEntry: NSObject {
     var entryText: String?
     var date: Date?
     var humanReadableDate: String?
+    var uid: String?
     static var currentUserUid = FIRAuth.auth()?.currentUser?.uid
     
-    static let DBRef = FIRDatabase.database().reference()
+    static let journalRefStat = FIRDatabase.database().reference().child("users").child(currentUserUid!).child("journal")
+    let journalRef = journalRefStat
     
     
     init(text: String, date: Date) {
@@ -23,6 +25,7 @@ class JournalEntry: NSObject {
         self.entryText = text
         self.date = date
         self.humanReadableDate = JournalEntry.formatDate(date: date)
+        self.uid = journalRef.childByAutoId().key
     }
     
     class func formatDate(date: Date) -> String {
@@ -32,8 +35,15 @@ class JournalEntry: NSObject {
         return formatter.string(from: date)
     }
     
-    class func addEntry(entry: JournalEntry) {
-        let journalRef = DBRef.child("users").child(currentUserUid!).child("journal")
-        journalRef.childByAutoId().setValue(["text" : entry.entryText, "date" : "\(entry.date!.timeIntervalSince1970)"])
+    class func addEntry(entry: JournalEntry){
+        let uid = journalRefStat.child(entry.uid!)
+        print("ADDED: \(entry.uid)")
+        uid.setValue(["text" : entry.entryText, "date" : "\(entry.date!.timeIntervalSince1970)"])
+    }
+    
+    
+    class func deleteEntry(entry: JournalEntry) {
+        print("deleted: \(entry.uid!)")
+        journalRefStat.removeValue()
     }
 }
