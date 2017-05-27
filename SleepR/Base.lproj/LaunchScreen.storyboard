@@ -21,13 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFO-NB-2Fo">
-                                <rect key="frame" x="121" y="305" width="133.5" height="58"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="ahD-NB-3sJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFO-NB-2Fo">
+                                <rect key="frame" x="77.5" y="30" width="220" height="94.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Sleepr">
                                         <attributes>
-                                            <color key="NSColor" red="1" green="0.75491859875277789" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="48" name="GillSans-SemiBold"/>
+                                            <color key="NSColor" red="1" green="0.74230969396820012" blue="0.075484681540019305" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="79" name="GillSans-SemiBold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -35,10 +38,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.29803921570000003" green="0.31372549020000001" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="jFO-NB-2Fo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1Dl-BQ-9T3"/>
-                            <constraint firstItem="jFO-NB-2Fo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DYq-d9-YAf"/>
+                            <constraint firstItem="jFO-NB-2Fo" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="10" id="0zR-vc-X4d"/>
+                            <constraint firstAttribute="trailing" secondItem="ahD-NB-3sJ" secondAttribute="trailing" id="2lf-Ta-rar"/>
+                            <constraint firstItem="ahD-NB-3sJ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="CHe-mN-fqt"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="ahD-NB-3sJ" secondAttribute="bottom" id="Han-7T-gcV"/>
+                            <constraint firstItem="ahD-NB-3sJ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="QjC-DU-6ji"/>
+                            <constraint firstItem="jFO-NB-2Fo" firstAttribute="centerX" secondItem="ahD-NB-3sJ" secondAttribute="centerX" id="tQd-IJ-gli"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -47,4 +53,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splash" width="1728" height="2592"/>
+    </resources>
 </document>
