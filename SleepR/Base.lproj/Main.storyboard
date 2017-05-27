@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -445,13 +444,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Write a thought before you sleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYy-jz-GmL">
-                                <rect key="frame" x="0.0" y="56" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Z9-rk-y98">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0sd-xu-idb">
@@ -461,7 +453,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="entry_background" id="ljE-Mc-aau">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                    <rect key="frame" x="0.0" y="-64" width="375" height="554"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <cells>
@@ -485,31 +477,12 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDe-Ll-P3a">
-                                                    <rect key="frame" x="10" y="10" width="30" height="33"/>
-                                                    <gestureRecognizers/>
-                                                    <state key="normal">
-                                                        <attributedString key="attributedTitle">
-                                                            <fragment content="X">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="0.91916708140000003" green="0.1982517234" blue="0.1982517234" alpha="0.93634952910000002" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                    </state>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="rhB-AJ-DUK" appends="YES" id="dWE-yc-2Us"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.97254901960784312" green="0.92549019607843142" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="VgT-Eq-1CJ" firstAttribute="leading" secondItem="OUJ-My-raO" secondAttribute="leading" id="4vW-HB-ckV"/>
                                             <constraint firstAttribute="trailing" secondItem="VgT-Eq-1CJ" secondAttribute="trailing" id="P9E-ut-hLQ"/>
-                                            <constraint firstItem="EDe-Ll-P3a" firstAttribute="leading" secondItem="OUJ-My-raO" secondAttribute="leadingMargin" constant="2" id="UWq-NV-zKs"/>
-                                            <constraint firstItem="EDe-Ll-P3a" firstAttribute="top" secondItem="OUJ-My-raO" secondAttribute="topMargin" constant="2" id="WcK-6A-Fej"/>
                                             <constraint firstAttribute="bottom" secondItem="VgT-Eq-1CJ" secondAttribute="bottom" id="XgT-3Y-kj7"/>
                                             <constraint firstItem="VgT-Eq-1CJ" firstAttribute="top" secondItem="kzT-Bm-w3C" secondAttribute="bottom" constant="3" id="Xj5-he-xWO"/>
                                             <constraint firstAttribute="trailing" secondItem="kzT-Bm-w3C" secondAttribute="trailing" constant="12" id="r79-7Q-kvk"/>
@@ -522,12 +495,20 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a thought before you sleep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWK-cE-bUl">
+                                <rect key="frame" x="62" y="323" width="251" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97571976819999995" green="1" blue="0.96067859840000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="9Z9-rk-y98" firstAttribute="top" secondItem="obx-Ub-E6q" secondAttribute="bottom" id="LmM-ko-FkX"/>
                             <constraint firstItem="msE-GZ-m1j" firstAttribute="top" secondItem="9Z9-rk-y98" secondAttribute="bottom" id="Qyl-wf-tWY"/>
                             <constraint firstAttribute="trailing" secondItem="9Z9-rk-y98" secondAttribute="trailing" id="U2b-q3-ERx"/>
+                            <constraint firstItem="aWK-cE-bUl" firstAttribute="centerX" secondItem="7E5-QL-nzl" secondAttribute="centerX" id="j59-cJ-TlI"/>
                             <constraint firstItem="9Z9-rk-y98" firstAttribute="leading" secondItem="7E5-QL-nzl" secondAttribute="leading" id="ozc-X5-4AH"/>
+                            <constraint firstItem="aWK-cE-bUl" firstAttribute="centerY" secondItem="7E5-QL-nzl" secondAttribute="centerY" id="tv4-g6-PWE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sleep Journal" id="HQf-Nr-SfH">
@@ -546,17 +527,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="journalCollection" destination="9Z9-rk-y98" id="st7-K6-Cct"/>
-                        <outlet property="noEntriesDisplay" destination="jYy-jz-GmL" id="WHo-qd-1nk"/>
+                        <outlet property="noEntriesDisplay" destination="aWK-cE-bUl" id="0fo-tv-Wdo"/>
                         <segue destination="tUV-3W-Yow" kind="presentation" identifier="logout" id="mkI-vK-xgc"/>
                         <segue destination="nqs-iP-Nfv" kind="presentation" identifier="addEntry" id="LVj-I4-Ijj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAt-qo-DWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="rhB-AJ-DUK">
-                    <connections>
-                        <action selector="deleteEntry:" destination="kjp-ib-QVR" id="2qF-ng-4JW"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="rhB-AJ-DUK"/>
             </objects>
             <point key="canvasLocation" x="5058.3999999999996" y="542.87856071964018"/>
         </scene>
@@ -926,7 +903,7 @@
         <image name="tip_background" width="1728" height="2592"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FxB-cc-2c5"/>
-        <segue reference="QKq-sb-RzD"/>
+        <segue reference="mkI-vK-xgc"/>
+        <segue reference="ebq-CB-FPT"/>
     </inferredMetricsTieBreakers>
 </document>
