@@ -52,7 +52,7 @@ class SignUpViewController: UIViewController {
         nameText.layer.addSublayer(nameLine)
         
         
-        let colorAttribute = [NSForegroundColorAttributeName : UIColor.init(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 0.7)]
+        let colorAttribute = [NSForegroundColorAttributeName : UIColor.init(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 1)]
         
         email.attributedPlaceholder = NSAttributedString(string: "Email Address", attributes:colorAttribute)
         password.attributedPlaceholder = NSAttributedString(string: "Password", attributes:colorAttribute)

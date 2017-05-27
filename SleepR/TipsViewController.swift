@@ -19,6 +19,7 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var tipsCollection: UICollectionView!
     var tips:[Tip] = []
     var autofetch = true;
+    @IBOutlet weak var tipbackground: UIImageView!
 
     
     override func viewDidLoad() {
@@ -34,9 +35,9 @@ class TipsViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.tipsCollection.alpha = 0
+        self.tipbackground.alpha = 0
         UIView.animate(withDuration: 0.4, animations: {() -> Void in
-            self.tipsCollection.alpha = 1
+            self.tipbackground.alpha = 1
         })
     }
     

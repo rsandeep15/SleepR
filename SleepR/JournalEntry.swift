@@ -37,13 +37,11 @@ class JournalEntry: NSObject {
     
     class func addEntry(entry: JournalEntry){
         let uid = journalRefStat.child(entry.uid!)
-        print("ADDED: \(entry.uid)")
         uid.setValue(["text" : entry.entryText, "date" : "\(entry.date!.timeIntervalSince1970)"])
     }
     
     
     class func deleteEntry(entry: JournalEntry) {
-        print("deleted: \(entry.uid!)")
-        journalRefStat.removeValue()
+        journalRefStat.child(entry.uid!).removeValue()
     }
 }
